@@ -1,0 +1,17 @@
+@(title: String, movies: List[String], ratingsForm: Form[TenRatings])
+@import helper._
+
+@base(title) {	@*using main template, with page title as arg*@
+
+    @form(action = routes.Application.results(), 'id -> "ratingsForm") {
+        @for((movie, index) <- movies.zipWithIndex) {
+            @inputRadioGroup(
+                ratingsForm("m" + (index+1)),  
+                options = Seq("0" -> "0", "1" -> "1", "2" -> "2", "3" -> "3", "4" -> "4", "5" -> "5"),
+                '_label -> movie
+            ) 
+        }
+        <input type="submit" class="tenratings" value="Get Recommendations">         
+    }
+    @* Which variable the value goes to *@
+}

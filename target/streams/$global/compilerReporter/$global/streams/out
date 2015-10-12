@@ -1,0 +1,12 @@
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/play2torial/app/controllers/Application.java:50: cannot find symbol[0m
+[0m[[31merror[0m] [0m  symbol:   method getRandMovies()[0m
+[0m[[31merror[0m] [0m  location: class controllers.Application[0m
+[0m[[31merror[0m] [0mgetRandMovies[0m
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/play2torial/app/controllers/Application.java:52: cannot find symbol[0m
+[0m[[31merror[0m] [0m  symbol:   method getMovieTitle(java.lang.Integer)[0m
+[0m[[31merror[0m] [0m  location: class controllers.Application[0m
+[0m[[31merror[0m] [0mgetMovieTitle[0m
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/play2torial/app/controllers/Application.java:76: cannot find symbol[0m
+[0m[[31merror[0m] [0m  symbol:   method createNewUserVector(java.util.HashMap<java.lang.Integer,java.lang.Integer>)[0m
+[0m[[31merror[0m] [0m  location: class controllers.Application[0m
+[0m[[31merror[0m] [0mcreateNewUserVector[0m
