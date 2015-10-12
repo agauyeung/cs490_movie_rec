@@ -54,8 +54,8 @@ Seq[Any](format.raw/*1.48*/("""
 object results extends results_Scope0.results
               /*
                   -- GENERATED --
-                  DATE: Sun Oct 11 19:57:33 PDT 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/play2torial/app/views/results.scala.html
+                  DATE: Sun Oct 11 22:58:17 PDT 2015
+                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/results.scala.html
                   HASH: 91d975c0a8b6d0b4131421cc4e9ae14a2b10c102
                   MATRIX: 762->1|903->47|931->50|950->61|989->63|1017->111|1049->154|1080->156
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|35->4|36->5

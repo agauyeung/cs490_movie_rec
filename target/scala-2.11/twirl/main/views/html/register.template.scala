@@ -55,8 +55,8 @@ Seq[Any](format.raw/*1.17*/("""
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Wed Sep 30 15:39:59 PDT 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/play2torial/app/views/register.scala.html
+                  DATE: Sun Oct 11 22:58:17 PDT 2015
+                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/register.scala.html
                   HASH: c35b9566ffdb0056fe3827269d5bbad1ffd7fbe4
                   MATRIX: 751->1|861->16|889->19|908->30|947->32|975->80|1008->122|1039->124
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|37->6

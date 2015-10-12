@@ -1,4 +1,4 @@
-name := """play2torial"""
+name := """movie_rec"""
 
 version := "1.0-SNAPSHOT"
 
