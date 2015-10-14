@@ -64,7 +64,42 @@ public class Application extends Controller {
     
     public Result results() {
         Form<TenRatings> filledForm = ratingsForm.bindFromRequest();
-        TenRatings created = filledForm.get();
+        Map<String, String> test = filledForm.data();
+        System.out.println("Form Values Begin");
+        for (String key : test.keySet()) {
+        	System.out.println(test.get(key));
+        }
+        System.out.println("Form Values End.");
+        
+        TenRatings created = /*filledForm.get();*/ new TenRatings();
+        created.m1 = Integer.parseInt(test.get("m1"));
+        created.m2 = Integer.parseInt(test.get("m2"));
+        created.m3 = Integer.parseInt(test.get("m3"));
+        created.m4 = Integer.parseInt(test.get("m4"));
+        created.m5 = Integer.parseInt(test.get("m5"));
+        created.m6 = Integer.parseInt(test.get("m6"));
+        created.m7 = Integer.parseInt(test.get("m7"));
+        created.m8 = Integer.parseInt(test.get("m8"));
+        created.m9 = Integer.parseInt(test.get("m9"));
+        created.m10 = Integer.parseInt(test.get("m10"));
+        
+        /** DO NOT USE filledForm.get() because Eclipse Build interferes with it
+         *  WILL GET 0 or NULL values.
+         */
+        
+        System.out.println("New Object Begin");
+        System.out.println(created.m1);
+        System.out.println(created.m2);
+        System.out.println(created.m3);
+        System.out.println(created.m4);
+        System.out.println(created.m5);
+        System.out.println(created.m6);
+        System.out.println(created.m7);
+        System.out.println(created.m8);
+        System.out.println(created.m9);
+        System.out.println(created.m10);
+        System.out.println("New Object End");
+
         
         //Grab each rating in TenRatings and add to User Ratings.
         HashMap<Integer, Integer> ratingsMap = new HashMap<Integer, Integer>();

@@ -76,6 +76,7 @@ public class MovieRecommender {
     public static SparseMatrix createNewUserVector(HashMap<Integer, Integer> ratingsMap, int numOfMovies) {
     	SparseMatrix vector = new SparseMatrix(1, numOfMovies);
     	for (int movieID : ratingsMap.keySet()) {
+    	    System.out.println("MovieID: " + movieID + ", Rating: " + ratingsMap.get(movieID));
     		vector.set(0, movieID, ratingsMap.get(movieID));
     	}
     	return vector;
@@ -83,13 +84,15 @@ public class MovieRecommender {
     
     //This last one does not work yet!!!
     public static List<String> getRecommendations(SparseMatrix user, TreeMap<Integer, String> movies) {
+        System.out.println("Recommending Movies...");
         List<String> recMovies = new ArrayList<String>();
-        for(int j = 0; j<1677; j++) {
+        for(int j = 0; j < movies.size(); j++) {
             if(recMovies.size() < 10){
+                //System.out.println(user.get(0, j));
                 if(user.get(0, j) > 3){
-                    if(!recMovies.contains(j))
-                    	recMovies.add(movies.get(j));
-                    	System.out.println("MOVIE: " + movies.get(j));
+                    if(!recMovies.contains(j + 1))
+                    	recMovies.add(movies.get(j + 1));
+                    	System.out.println("MOVIE: " + movies.get(j + 1));
                 }
             }
         }
