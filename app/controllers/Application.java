@@ -1,15 +1,19 @@
 package controllers;
 
+import models.MovieRecommender;
 import play.data.Form;
 import play.*;
 import play.mvc.*;
-
 import models.TenRatings;
 import views.html.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Application extends Controller {
 
@@ -17,6 +21,7 @@ public class Application extends Controller {
     List<Integer> randMovieIDs = null;
     List<String> tenMoviesTest = new ArrayList<String>();
     List<String> recommendations = new ArrayList<String>();
+    TreeMap<Integer, String> movieData = null;
 
     public Result index() {
         return recommended();
@@ -47,11 +52,13 @@ public class Application extends Controller {
         tenMoviesTest.add("Babe (1995)");
         tenMoviesTest.add("Dead Man Walking (1995)");
         tenMoviesTest.add("Richard III (1995)");*/
-        randMovieIDs = getRandMovies();
+    	
+    	movieData = MovieRecommender.initializeMovieData(Paths.get("movies.txt"));
+        randMovieIDs = MovieRecommender.getRandMovies(movieData);
         for (int i = 0; i < randMovieIDs.size(); i++) {
-            tenMoviesTest.add(getMovieTitle(randMovieIDs.get(i)));
+            tenMoviesTest.add(MovieRecommender.getMovieTitle(randMovieIDs.get(i), movieData));
         }
-        
+        System.out.println("CALLING RATE PAGE");
         return ok(rate.render("Rate 10 Movies", tenMoviesTest, ratingsForm));
     }
     
@@ -73,7 +80,7 @@ public class Application extends Controller {
         ratingsMap.put(randMovieIDs.get(9), created.m10);
 
         //Call getRecommendation() to populate recommendations ArrayList
-        recommendations = getRecommendations(createNewUserVector(ratingsMap));
+        recommendations = MovieRecommender.getRecommendations(MovieRecommender.createNewUserVector(ratingsMap, movieData.size()), movieData);
         
         
         return ok(results.render("Results", recommendations));

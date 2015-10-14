@@ -33,7 +33,10 @@ Seq[Any](format.raw/*1.48*/("""
 
 """),_display_(/*3.2*/base(title)/*3.13*/ {_display_(Seq[Any](format.raw/*3.15*/("""	"""),format.raw/*3.63*/("""
     """),format.raw/*4.43*/("""
-""")))}),format.raw/*5.2*/("""
+    """),_display_(/*5.6*/for(recommendation <- recommendations) yield /*5.44*/ {_display_(Seq[Any](format.raw/*5.46*/("""
+        """),_display_(/*6.10*/recommendation),format.raw/*6.24*/("""    
+    """)))}),format.raw/*7.6*/("""
+""")))}),format.raw/*8.2*/("""
 """))
       }
     }
@@ -54,11 +57,11 @@ Seq[Any](format.raw/*1.48*/("""
 object results extends results_Scope0.results
               /*
                   -- GENERATED --
-                  DATE: Sun Oct 11 22:58:17 PDT 2015
+                  DATE: Wed Oct 14 01:38:41 PDT 2015
                   SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/results.scala.html
-                  HASH: 91d975c0a8b6d0b4131421cc4e9ae14a2b10c102
-                  MATRIX: 762->1|903->47|931->50|950->61|989->63|1017->111|1049->154|1080->156
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|35->4|36->5
+                  HASH: 4acbc69334e946e86781f2cbc526b6c36610c4b1
+                  MATRIX: 762->1|903->47|931->50|950->61|989->63|1017->111|1049->154|1080->160|1133->198|1172->200|1208->210|1242->224|1281->234|1312->236
+                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|35->4|36->5|36->5|36->5|37->6|37->6|38->7|39->8
                   -- GENERATED --
               */
           
