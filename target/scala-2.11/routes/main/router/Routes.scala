@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
-// @DATE:Sun Oct 11 22:58:18 PDT 2015
+// @DATE:Wed Oct 14 17:46:26 PDT 2015
 
 package router
 
@@ -50,6 +50,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rate""", """controllers.Application.rate()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """results""", """controllers.Application.results()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """random""", """controllers.Application.random()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -176,6 +177,23 @@ class Routes(
     )
   )
 
+  // @LINE:27
+  private[this] lazy val controllers_Application_random7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("random")))
+  )
+  private[this] lazy val controllers_Application_random7_invoker = createInvoker(
+    Application_1.random(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "random",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """random"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -219,6 +237,12 @@ class Routes(
     case controllers_Application_results6_route(params) =>
       call { 
         controllers_Application_results6_invoker.call(Application_1.results())
+      }
+  
+    // @LINE:27
+    case controllers_Application_random7_route(params) =>
+      call { 
+        controllers_Application_random7_invoker.call(Application_1.random())
       }
   }
 }
