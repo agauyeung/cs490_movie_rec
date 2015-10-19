@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
-// @DATE:Wed Oct 14 17:46:26 PDT 2015
+// @DATE:Mon Oct 19 00:28:40 PDT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -59,6 +59,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "recommended"})
+        }
+      """
+    )
+  
+    // @LINE:29
+    def registered: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.registered",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "registered"})
         }
       """
     )

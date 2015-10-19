@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
-// @DATE:Wed Oct 14 17:46:26 PDT 2015
+// @DATE:Mon Oct 19 00:28:40 PDT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -45,6 +45,12 @@ package controllers {
     def recommended(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "recommended")
+    }
+  
+    // @LINE:29
+    def registered(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "registered")
     }
   
     // @LINE:25

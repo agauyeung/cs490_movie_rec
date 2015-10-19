@@ -5,6 +5,7 @@ import play.data.Form;
 import play.*;
 import play.mvc.*;
 import models.TenRatings;
+import models.UserRegistration;
 import views.html.*;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ import java.nio.file.Paths;
 public class Application extends Controller {
 
     final static Form<TenRatings> ratingsForm = Form.form(TenRatings.class);
+    final static Form<UserRegistration> regForm = Form.form(UserRegistration.class);
+
     List<Integer> randMovieIDs = null;
     List<String> tenMoviesTest = new ArrayList<String>();
     MovieRecommender movRec = new MovieRecommender("movies.txt", "Vn.txt");
@@ -37,9 +40,29 @@ public class Application extends Controller {
     }
     
     public Result register() {
-        return ok(register.render("User Registration"));
+        return ok(register.render("User Registration", regForm));
+    }
+    
+    public Result registered() {
+        Form<TenRatings> filledForm = ratingsForm.bindFromRequest();
+        Map<String, String> formMap = filledForm.data();
+
+        /** DO NOT USE filledForm.get() because Eclipse Build interferes with it
+         *  WILL GET 0 or NULL values.
+         */
+        
+        //Grab each rating in from the form and add to User Ratings.
+        String username = formMap.get("username");
+        String password = formMap.get("password");
+
+        //TODO: PLACE THEM INTO DATABASE!
+        //TODO: BACKEND; CHECK USERNAME/PASSWORD for validity.
+
+        return ok(registered.render("Registration Confirmation", username));
     }
 
+
+    /** DEMO */
     public Result rate() { 	    	
         randMovieIDs = movRec.getRandMovies();
         for (int i = 0; i < randMovieIDs.size(); i++) {
@@ -76,6 +99,7 @@ public class Application extends Controller {
         return ok(results.render("Results", recommendations));
     }
     
+    /** TESTING */
     public Result random() {
     	List<String> recommendations = movRec.getRecommendations(movRec.genRandUser());
 

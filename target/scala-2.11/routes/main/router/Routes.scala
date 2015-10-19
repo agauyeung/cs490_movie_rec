@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
-// @DATE:Wed Oct 14 17:46:26 PDT 2015
+// @DATE:Mon Oct 19 00:28:40 PDT 2015
 
 package router
 
@@ -51,6 +51,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rate""", """controllers.Application.rate()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """results""", """controllers.Application.results()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """random""", """controllers.Application.random()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """registered""", """controllers.Application.registered()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -194,6 +195,23 @@ class Routes(
     )
   )
 
+  // @LINE:29
+  private[this] lazy val controllers_Application_registered8_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("registered")))
+  )
+  private[this] lazy val controllers_Application_registered8_invoker = createInvoker(
+    Application_1.registered(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "registered",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """registered"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -243,6 +261,12 @@ class Routes(
     case controllers_Application_random7_route(params) =>
       call { 
         controllers_Application_random7_invoker.call(Application_1.random())
+      }
+  
+    // @LINE:29
+    case controllers_Application_registered8_route(params) =>
+      call { 
+        controllers_Application_registered8_invoker.call(Application_1.registered())
       }
   }
 }

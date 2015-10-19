@@ -24,4 +24,6 @@ GET     /rate                       controllers.Application.rate()
 # Results
 POST    /results                    controllers.Application.results()
 
-GET    /random                    controllers.Application.random()
+GET     /random                    controllers.Application.random()
+
+POST     /registered                 controllers.Application.registered()
