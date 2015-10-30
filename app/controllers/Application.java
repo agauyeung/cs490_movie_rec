@@ -4,8 +4,10 @@ import models.MovieRecommender;
 import play.data.Form;
 import play.*;
 import play.mvc.*;
+import play.db.*;
 import models.TenRatings;
 import models.UserRegistration;
+import models.Movies;
 import views.html.*;
 
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ public class Application extends Controller {
     List<String> tenMoviesTest = new ArrayList<String>();
     MovieRecommender movRec = new MovieRecommender("movies.txt", "Vn.txt");
 
+    //database stuff
+
     public Result index() {
         return recommended();
     }
@@ -41,6 +45,16 @@ public class Application extends Controller {
     
     public Result register() {
         return ok(register.render("User Registration", regForm));
+    }
+
+    public Result register_user() {
+        return ok(register_user.render("User Registration", regForm));
+    }
+
+    public Result view() {
+        return ok(view.render( 
+            Movies.find.all()
+        ));
     }
     
     public Result registered() {
