@@ -63,8 +63,8 @@ Seq[Any](format.raw/*1.50*/("""
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 19 00:26:38 PDT 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/register.scala.html
+                  DATE: Mon Oct 19 18:16:54 PDT 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/register.scala.html
                   HASH: ef5800eff262a7a4ee1af7cd92fa72bbade7b997
                   MATRIX: 774->1|932->49|959->67|986->69|1005->80|1044->82|1072->130|1105->172|1136->178|1208->242|1247->244|1288->259|1374->325|1411->335|1498->401|1534->410|1648->494|1681->497
                   LINES: 27->1|32->1|33->3|34->4|34->4|34->4|34->4|36->6|37->7|37->7|37->7|39->9|39->9|40->10|40->10|41->11|43->13|45->15

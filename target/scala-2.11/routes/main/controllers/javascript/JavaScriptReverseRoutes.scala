@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
-// @DATE:Mon Oct 19 00:28:40 PDT 2015
+// @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
+// @DATE:Wed Oct 21 11:56:59 PDT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:18
+  // @LINE:24
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:24
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -43,7 +43,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:18
+    def register_user: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.register_user",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register_user"})
+        }
+      """
+    )
+  
+    // @LINE:28
     def rate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.rate",
       """
@@ -63,7 +73,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:29
+    // @LINE:35
     def registered: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.registered",
       """
@@ -73,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:31
     def results: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.results",
       """
@@ -93,7 +103,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:33
     def random: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.random",
       """
@@ -119,6 +129,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def view: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.view",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "view"})
         }
       """
     )

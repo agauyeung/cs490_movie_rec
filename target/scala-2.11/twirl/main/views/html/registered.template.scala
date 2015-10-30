@@ -57,8 +57,8 @@ Seq[Any](format.raw/*1.35*/("""
 object registered extends registered_Scope0.registered
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 19 00:33:36 PDT 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/registered.scala.html
+                  DATE: Mon Oct 19 18:16:54 PDT 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/registered.scala.html
                   HASH: 2edb8c3a8fc3e265f29391644bbd94a1cdc459cd
                   MATRIX: 762->1|890->34|918->37|937->48|976->50|1004->98|1036->104|1072->114|1100->122|1222->215
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|36->5|36->5|39->8

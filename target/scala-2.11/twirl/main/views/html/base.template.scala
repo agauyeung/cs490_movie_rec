@@ -54,11 +54,13 @@ Seq[Any](format.raw/*1.32*/("""
         <a href="register">User Registration</a>
         &#09;&#09;|&#09;&#09;
         <a href="rate">Rate 10 Movies</a>
+        &#09;&#09;|&#09;&#09;
+        <a href="view">View Movies</a>
         <hr>
         
-        """),_display_(/*28.10*/content),format.raw/*28.17*/("""
+        """),_display_(/*30.10*/content),format.raw/*30.17*/("""
         
-    """),format.raw/*30.5*/("""</body>
+    """),format.raw/*32.5*/("""</body>
 </html>
 """))
       }
@@ -80,11 +82,11 @@ Seq[Any](format.raw/*1.32*/("""
 object base extends base_Scope0.base
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 14 15:18:21 PDT 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/base.scala.html
-                  HASH: 18e8c6415af9cc47a4577d4d25a00ad6a74038ee
-                  MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1647->539|1673->544|2053->897|2081->904|2122->918
-                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|47->16|47->16|59->28|59->28|61->30
+                  DATE: Tue Oct 20 21:16:17 PDT 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/base.scala.html
+                  HASH: 535abbf42a9a109fccbdfd74b4b4e31373b1ab36
+                  MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1647->539|1673->544|2122->966|2150->973|2191->987
+                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|47->16|47->16|61->30|61->30|63->32
                   -- GENERATED --
               */
           
