@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Wed Oct 21 11:56:59 PDT 2015
+// @DATE:Sun Nov 01 01:54:13 PDT 2015
 
 package router
 
@@ -54,6 +54,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """results""", """controllers.Application.results()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """random""", """controllers.Application.random()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """registered""", """controllers.Application.registered()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.Application.login()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticate""", """controllers.Application.authenticate()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """authenticated""", """controllers.Application.authenticated()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -248,6 +251,57 @@ class Routes(
     )
   )
 
+  // @LINE:38
+  private[this] lazy val controllers_Application_login11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  )
+  private[this] lazy val controllers_Application_login11_invoker = createInvoker(
+    Application_1.login(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "login",
+      Nil,
+      "GET",
+      """Login""",
+      this.prefix + """login"""
+    )
+  )
+
+  // @LINE:40
+  private[this] lazy val controllers_Application_authenticate12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("authenticate")))
+  )
+  private[this] lazy val controllers_Application_authenticate12_invoker = createInvoker(
+    Application_1.authenticate(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "authenticate",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """authenticate"""
+    )
+  )
+
+  // @LINE:42
+  private[this] lazy val controllers_Application_authenticated13_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("authenticated")))
+  )
+  private[this] lazy val controllers_Application_authenticated13_invoker = createInvoker(
+    Application_1.authenticated(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "authenticated",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """authenticated"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -315,6 +369,24 @@ class Routes(
     case controllers_Application_registered10_route(params) =>
       call { 
         controllers_Application_registered10_invoker.call(Application_1.registered())
+      }
+  
+    // @LINE:38
+    case controllers_Application_login11_route(params) =>
+      call { 
+        controllers_Application_login11_invoker.call(Application_1.login())
+      }
+  
+    // @LINE:40
+    case controllers_Application_authenticate12_route(params) =>
+      call { 
+        controllers_Application_authenticate12_invoker.call(Application_1.authenticate())
+      }
+  
+    // @LINE:42
+    case controllers_Application_authenticated13_route(params) =>
+      call { 
+        controllers_Application_authenticated13_invoker.call(Application_1.authenticated())
       }
   }
 }

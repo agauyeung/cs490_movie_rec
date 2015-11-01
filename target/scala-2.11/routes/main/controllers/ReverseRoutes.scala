@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Wed Oct 21 11:56:59 PDT 2015
+// @DATE:Sun Nov 01 01:54:13 PDT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -39,6 +39,12 @@ package controllers {
     def register_user(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "register_user")
+    }
+  
+    // @LINE:42
+    def authenticated(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "authenticated")
     }
   
     // @LINE:28
@@ -83,6 +89,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "history")
     }
   
+    // @LINE:40
+    def authenticate(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "authenticate")
+    }
+  
     // @LINE:6
     def index(): Call = {
       import ReverseRouteContext.empty
@@ -93,6 +105,12 @@ package controllers {
     def view(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "view")
+    }
+  
+    // @LINE:38
+    def login(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "login")
     }
   
   }

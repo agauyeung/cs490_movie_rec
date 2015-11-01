@@ -1,13 +1,17 @@
 package controllers;
 
-import models.MovieRecommender;
+
 import play.data.Form;
 import play.*;
 import play.mvc.*;
 import play.db.*;
+import play.data.*;
 import models.TenRatings;
 import models.UserRegistration;
+import models.MovieRecommender;
 import models.Movies;
+import models.Login;
+
 import views.html.*;
 
 import java.util.ArrayList;
@@ -22,6 +26,7 @@ public class Application extends Controller {
 
     final static Form<TenRatings> ratingsForm = Form.form(TenRatings.class);
     final static Form<UserRegistration> regForm = Form.form(UserRegistration.class);
+    final static Form<Login> loginForm = Form.form(Login.class);
 
     List<Integer> randMovieIDs = null;
     List<String> tenMoviesTest = new ArrayList<String>();
@@ -29,6 +34,7 @@ public class Application extends Controller {
 
     //database stuff
 
+    @Security.Authenticated(Secured.class)
     public Result index() {
         return recommended();
     }
@@ -46,15 +52,32 @@ public class Application extends Controller {
     public Result register() {
         return ok(register.render("User Registration", regForm));
     }
-
+    
     public Result register_user() {
-        return ok(register_user.render("User Registration", regForm));
+        return ok(register.render("User Registration", regForm));
+    }
+    
+    public Result login() {
+        return ok(login.render("User Login", login));
     }
 
     public Result view() {
         return ok(view.render( 
             Movies.find.all()
         ));
+    }
+    
+    public static Result authenticate() {
+        Form<Login> loginForm = form(Login.class).bindFromRequest();
+        if (loginForm.hasErrors()) {
+            return badRequest(login.render(loginForm));
+        } else {
+            session().clear();
+            session("email", loginForm.get().email);
+            return redirect(
+                routes.Application.index()
+            );
+        }
     }
     
     public Result registered() {
@@ -74,7 +97,6 @@ public class Application extends Controller {
 
         return ok(registered.render("Registration Confirmation", username));
     }
-
 
     /** DEMO */
     public Result rate() { 	    	
