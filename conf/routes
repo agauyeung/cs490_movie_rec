@@ -35,8 +35,5 @@ GET     /random                    controllers.Application.random()
 POST     /registered                 controllers.Application.registered()
 
 #Login
-GET     /login                  controllers.Application.login()
 
-GET    /authenticate                      controllers.Application.authenticate()
-
-POST    /authenticated                      controllers.Application.authenticated()
+# GET     /login                  controllers.Application.login()

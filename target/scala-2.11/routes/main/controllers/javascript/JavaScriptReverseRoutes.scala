@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Sun Nov 01 01:54:13 PDT 2015
+// @DATE:Sun Nov 01 01:35:04 PST 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -49,16 +49,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register_user"})
-        }
-      """
-    )
-  
-    // @LINE:42
-    def authenticated: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.authenticated",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "authenticated"})
         }
       """
     )
@@ -133,16 +123,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:40
-    def authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.authenticate",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "authenticate"})
-        }
-      """
-    )
-  
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.index",
@@ -159,16 +139,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "view"})
-        }
-      """
-    )
-  
-    // @LINE:38
-    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.login",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
         }
       """
     )

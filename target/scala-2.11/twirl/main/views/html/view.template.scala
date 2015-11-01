@@ -62,7 +62,7 @@ Seq[Any](format.raw/*1.24*/("""
 object view extends view_Scope0.view
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 26 16:11:37 PDT 2015
+                  DATE: Sun Nov 01 02:18:16 PST 2015
                   SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/view.scala.html
                   HASH: b17195fb715d44840671890982af1f3dd3c8ba6d
                   MATRIX: 749->1|866->23|894->25|952->58|987->78|1026->80|1055->83|1085->88|1098->93|1123->98|1154->103|1195->118|1208->123|1237->132|1269->137|1314->152|1343->154

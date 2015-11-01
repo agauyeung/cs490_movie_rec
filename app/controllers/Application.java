@@ -10,7 +10,7 @@ import models.TenRatings;
 import models.UserRegistration;
 import models.MovieRecommender;
 import models.Movies;
-import models.Login;
+import models.Users;
 
 import views.html.*;
 
@@ -26,7 +26,7 @@ public class Application extends Controller {
 
     final static Form<TenRatings> ratingsForm = Form.form(TenRatings.class);
     final static Form<UserRegistration> regForm = Form.form(UserRegistration.class);
-    final static Form<Login> loginForm = Form.form(Login.class);
+    //final static Form<Login> loginForm = Form.form(Login.class);
 
     List<Integer> randMovieIDs = null;
     List<String> tenMoviesTest = new ArrayList<String>();
@@ -34,7 +34,6 @@ public class Application extends Controller {
 
     //database stuff
 
-    @Security.Authenticated(Secured.class)
     public Result index() {
         return recommended();
     }
@@ -57,9 +56,11 @@ public class Application extends Controller {
         return ok(register.render("User Registration", regForm));
     }
     
+    /**
     public Result login() {
         return ok(login.render("User Login", login));
     }
+    **/
 
     public Result view() {
         return ok(view.render( 
@@ -67,6 +68,7 @@ public class Application extends Controller {
         ));
     }
     
+    /**
     public static Result authenticate() {
         Form<Login> loginForm = form(Login.class).bindFromRequest();
         if (loginForm.hasErrors()) {
@@ -79,6 +81,8 @@ public class Application extends Controller {
             );
         }
     }
+    **/
+    
     
     public Result registered() {
         Form<TenRatings> filledForm = ratingsForm.bindFromRequest();
@@ -89,11 +93,18 @@ public class Application extends Controller {
          */
         
         //Grab each rating in from the form and add to User Ratings.
+        String email = formMap.get("username");
         String username = formMap.get("username");
         String password = formMap.get("password");
-
+        
         //TODO: PLACE THEM INTO DATABASE!
         //TODO: BACKEND; CHECK USERNAME/PASSWORD for validity.
+        
+        Users newUser = new Users();
+        newUser.email = email;
+        newUser.username = username;
+        newUser.password = password;
+        newUser.save();
 
         return ok(registered.render("Registration Confirmation", username));
     }

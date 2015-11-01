@@ -33,3 +33,7 @@ POST    /results                    controllers.Application.results()
 GET     /random                    controllers.Application.random()
 
 POST     /registered                 controllers.Application.registered()
+
+#Login
+
+# GET     /login                  controllers.Application.login()
