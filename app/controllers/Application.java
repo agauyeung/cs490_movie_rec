@@ -26,6 +26,7 @@ public class Application extends Controller {
 
     final static Form<TenRatings> ratingsForm = Form.form(TenRatings.class);
     final static Form<UserRegistration> regForm = Form.form(UserRegistration.class);
+    final static Form<Users> dbRegForm = Form.form(Users.class);
     //final static Form<Login> loginForm = Form.form(Login.class);
 
     List<Integer> randMovieIDs = null;
@@ -53,7 +54,7 @@ public class Application extends Controller {
     }
     
     public Result register_user() {
-        return ok(register.render("User Registration", regForm));
+        return ok(register_user.render("User Registration", dbRegForm));
     }
     
     /**
@@ -65,6 +66,12 @@ public class Application extends Controller {
     public Result view() {
         return ok(view.render( 
             Movies.find.all()
+        ));
+    }
+    
+    public Result users() {
+        return ok(users.render( 
+            Users.find.all()
         ));
     }
     

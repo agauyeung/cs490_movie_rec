@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.35*/("""
 """),_display_(/*3.2*/base(title)/*3.13*/ {_display_(Seq[Any](format.raw/*3.15*/("""	"""),format.raw/*3.63*/("""
 
     """),format.raw/*5.5*/("""Welcome, """),_display_(/*5.15*/username),format.raw/*5.23*/("""!<br>
-    You haven't been registered yet because we're not yet connected with a database.
+    You are now a member of our movie recommendation application. Enjoy!
 
 """)))}),format.raw/*8.2*/("""
 """))
@@ -57,10 +57,10 @@ Seq[Any](format.raw/*1.35*/("""
 object registered extends registered_Scope0.registered
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 19 18:16:54 PDT 2015
+                  DATE: Sun Nov 01 23:01:19 PST 2015
                   SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/registered.scala.html
-                  HASH: 2edb8c3a8fc3e265f29391644bbd94a1cdc459cd
-                  MATRIX: 762->1|890->34|918->37|937->48|976->50|1004->98|1036->104|1072->114|1100->122|1222->215
+                  HASH: c7e9fc740d56cc1cb729e7f2e6731a02b4393098
+                  MATRIX: 762->1|890->34|918->37|937->48|976->50|1004->98|1036->104|1072->114|1100->122|1210->203
                   LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|36->5|36->5|39->8
                   -- GENERATED --
               */

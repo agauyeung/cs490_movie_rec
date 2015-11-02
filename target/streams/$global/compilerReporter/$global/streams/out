@@ -1,5 +1,7 @@
-[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Application.java:100: constructor Users in class models.Users cannot be applied to given types;[0m
-[0m[[31merror[0m] [0m  required: no arguments[0m
-[0m[[31merror[0m] [0m  found: java.lang.String,java.lang.String,java.lang.String[0m
-[0m[[31merror[0m] [0m  reason: actual and formal argument lists differ in length[0m
-[0m[[31merror[0m] [0mnew Users(email, username, password)[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Application.java:29:  inferred type does not conform to equality constraint(s)[0m
+[0m[[31merror[0m] [0m    inferred: models.UserRegistration[0m
+[0m[[31merror[0m] [0m    equality constraints(s): models.UserRegistration,models.Users[0m
+[0m[[31merror[0m] [0mForm.form(Users.class)[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Application.java:57:  play.data.Form<models.UserRegistration> cannot be converted to play.data.Form<models.Users>[0m
+[0m[[31merror[0m] [0mdbRegForm[0m
+[0m[[0minfo[0m] [0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m

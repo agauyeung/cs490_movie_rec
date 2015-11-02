@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Sun Nov 01 01:35:04 PST 2015
+// @DATE:Sun Nov 01 22:30:43 PST 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:24
+  // @LINE:27
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:27
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -53,7 +53,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
+    // @LINE:31
     def rate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.rate",
       """
@@ -73,7 +73,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:38
     def registered: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.registered",
       """
@@ -83,12 +83,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:34
     def results: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.results",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "results"})
+        }
+      """
+    )
+  
+    // @LINE:24
+    def users: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.users",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users"})
         }
       """
     )
@@ -103,7 +113,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:36
     def random: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.random",
       """
