@@ -20,13 +20,15 @@ import java.util.ListIterator;
 import java.util.Random;
 import java.util.TreeMap;
 
+import models.Recommender;
+
 import org.apache.mahout.math.Matrix;
 import org.apache.mahout.math.SparseMatrix;
 
 
 public class MovieRecommender {
 	
-	private static final int COLUMNSKEPT = 100;
+	private static final int COLUMNSKEPT = Recommender.findRetain(Paths.get("S_1M.txt"));
 	private static final int MAXNUMOFRECS = 10;
 	
 	private static ArrayList<String> movies;
@@ -34,7 +36,8 @@ public class MovieRecommender {
 	
 	public MovieRecommender(String movieFile, String VFile){
 		try {
-			Recommender.readMovies(Paths.get(movieFile));
+			//Recommender.readMoviesTenK(Paths.get(movieFile));
+			Recommender.readMoviesOneM(Paths.get(movieFile));
 			movies = (ArrayList<String>) Recommender.getMovies();
 		
 			readV(Paths.get(VFile));

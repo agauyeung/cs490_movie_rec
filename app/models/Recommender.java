@@ -68,7 +68,7 @@ public class Recommender {
 	
 	/**
 	 * Go through file and read in movie titles into movies ArrayList.
-	 * For 10K dataset.
+	 * For 100K dataset.
 	 * 
 	 * @param path - file that contains movies and info
 	 * @throws IOException
@@ -114,7 +114,7 @@ public class Recommender {
 	
 	/**
 	 * Goes through each rating and adds them and their users to the User Map.
-	 * For 10K dataset.
+	 * For 100K dataset.
 	 * 
 	 * @param path - file that contains movie ratings by individual users
 	 * @return true if movies ArrayList has been populated and false if it has not
@@ -240,7 +240,7 @@ public class Recommender {
 	
 	/**
 	 * Goes through each word in the line; they are separated by tabs.
-	 * For 10K dataset.
+	 * For 100K dataset.
 	 * 
 	 * @param text - line from file
 	 * @return List of words in the line
@@ -517,7 +517,7 @@ public class Recommender {
 	 * Each matrix is written to a text file.
 	 *
 	 * Depending on the size of the matrix, SVD calculations will take a while.
-	 * i.e. ~5 minutes for 10k dataset.
+	 * i.e. ~5 minutes for 100K dataset.
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 * @throws UnsupportedEncodingException 
@@ -538,7 +538,7 @@ public class Recommender {
 		System.out.println("Total execution time: " + (endTime - startTime) );
 			
 		//call get methods for U, V, and Sigma
-		/*System.out.println("Calculating Sigma...");
+		System.out.println("Calculating Sigma...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
 		       new FileOutputStream("S_1M.txt"), "utf-8"))) {
 			Matrix S = SVD.getS();
@@ -548,9 +548,11 @@ public class Recommender {
 				}
 				writer.write("\n");
 			}
-		}*/
+		}
 			
-		System.out.println("Calculating U...");
+		int columnsRetained = findRetain(Paths.get("S_1M.txt"));
+		
+		/*System.out.println("Calculating U...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
 		       new FileOutputStream("U_1M.txt"), "utf-8"))) {
 			Matrix U = SVD.getU();
@@ -560,19 +562,19 @@ public class Recommender {
 				}
 				writer.write("\n");
 			}
-		}
+		}*/
 		
-		/*System.out.println("Calculating V...");
+		System.out.println("Calculating V...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
 		       new FileOutputStream("V_1M.txt"), "utf-8"))) {
 			Matrix V = SVD.getV();
 			for (i = 0; i < V.rowSize(); i ++) {
-				for (j = 0; j < V.columnSize(); j ++) {
+				for (j = 0; j < columnsRetained/*V.columnSize()*/; j ++) {
 					writer.write(V.get(i, j) + " ");
 				}
 				writer.write("\n");
 			}		
-		}*/
+		}
 			
 		System.out.println("DONE.");
 	}
@@ -689,7 +691,7 @@ public class Recommender {
 			/* Find SVD Matrices */
             findSVDMatrices();
 			
-			System.out.println("10K Dataset: Retain " + findRetain(Paths.get("S_10K.txt")) + " eigenvalues out of rank " + 943);
+			System.out.println("100K Dataset: Retain " + findRetain(Paths.get("S_100K.txt")) + " eigenvalues out of rank " + 943);
 			System.out.println("1M Dataset: Retain " + findRetain(Paths.get("S_1M.txt")) + " eigenvalues out of rank " + 3883);
 
 			System.exit(0);
