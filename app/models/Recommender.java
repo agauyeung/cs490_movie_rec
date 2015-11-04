@@ -1,4 +1,5 @@
 package models;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -12,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -19,6 +21,8 @@ import java.util.ListIterator;
 import org.apache.mahout.math.Matrix;
 import org.apache.mahout.math.SingularValueDecomposition;
 import org.apache.mahout.math.SparseMatrix;
+
+
 
 public class Recommender {
 	
@@ -52,33 +56,56 @@ public class Recommender {
 	private static SparseMatrix matrix;
 	
 	/**
+	 * ArrayList of eigenvalues from Sigma
+	 */
+	private static ArrayList<Double> S = null;
+	
+	/**
+	 * HashMap mapping file's movieID to actual movieID
+	 */
+	private static HashMap<Integer, Integer> fixedMovieIDMap= null;
+	
+	
+	/**
 	 * Go through file and read in movie titles into movies ArrayList.
+	 * For 10K dataset.
 	 * 
 	 * @param path - file that contains movies and info
 	 * @throws IOException
 	 */
-	public static void readMovies(Path path) throws IOException {
-		int i;
-		String movie = "";
+	public static void readMoviesTenK(Path path) throws IOException {
+		boolean readID;
+		int index = 0, fileID;
+		String id = "", movie = "";
 		String text;
 		movies = new ArrayList<String>();
-		movies.add(null);
-		
+		fixedMovieIDMap = new HashMap<Integer, Integer>();
+	
 		try (
 				BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
 			) {
 			while ((text = reader.readLine()) != null){
-				i = 0;
+				readID = false;
+				id = "";
+				movie = "";
 				for (char c: text.toCharArray()) {
-					if (c != '|'){
-						movie += c;
-					} else {
-						i++;
-						if (i > 1) {
+					if (!readID) {
+						if (c != '|') {
+							id += c;
+						} else {
+							readID = true;
+						}
+					}
+					else {
+						if (c != '|'){
+							movie += c;
+						} else {
+							fileID = Integer.parseInt(id);
 							movies.add(movie);
+							fixedMovieIDMap.put(fileID, index);
+							index ++;
 							break;
 						}
-						movie = "";
 					}
 				}
 			}
@@ -87,18 +114,18 @@ public class Recommender {
 	
 	/**
 	 * Goes through each rating and adds them and their users to the User Map.
+	 * For 10K dataset.
 	 * 
 	 * @param path - file that contains movie ratings by individual users
 	 * @return true if movies ArrayList has been populated and false if it has not
 	 * @throws IOException
 	 */
-	public static boolean readRatings(Path path) throws IOException {
+	public static boolean readRatingsTenK(Path path) throws IOException {
 		int userID;
 		int movieID;
 		int rating;
 		
 		userMap = new UserMap(movies.size());
-
 		
 		if (movies == null) {
 			return false;
@@ -111,12 +138,100 @@ public class Recommender {
 					BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
 				) {
 				while ((text = reader.readLine()) != null){
-					line = parseText(text);
-					userID = Integer.parseInt(line.get(0));
-					movieID = Integer.parseInt(line.get(1));
+					line = parseTextTenK(text);
+					userID = Integer.parseInt(line.get(0)) - 1;     //all user IDs -1 to allow for userID 0
+					movieID = Integer.parseInt(line.get(1)) - 1;    //all movie IDs -1 to allow for movieID 0
 					rating = Integer.parseInt(line.get(2));
 					userMap.addRating(userID, movieID, rating);
-					//setQuick
+				}
+			}
+			return true;
+		}
+	}
+	
+	/**
+	 * Go through file and read in movie titles into movies ArrayList.
+	 * For 1M dataset.
+	 * 
+	 * @param path - file that contains movies and info
+	 * @throws IOException
+	 */
+	public static void readMoviesOneM(Path path) throws IOException {
+		char c;
+		int index = 0, fileID;
+		String movie = "";
+		String id = "";
+		String text;
+		int colons;
+		movies = new ArrayList<String>();
+		fixedMovieIDMap = new HashMap<Integer, Integer>();
+		char[] textArray;
+		
+		try (
+				BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
+			) {
+			while ((text = reader.readLine()) != null){
+				id = "";
+				movie = "";
+				colons = 0;
+				textArray = text.toCharArray();
+				for (int i = 0; i < textArray.length; i++) {
+					c = textArray[i];
+					if (colons < 2) {
+						if (c != ':') {
+							id += c;
+						} else {
+							colons ++;
+						}
+					} else {
+						if (c != ':' || (c == ':' && textArray[i+1] != ':')) {	//not a double colon
+							movie += c;
+						} else {
+							
+							fileID = Integer.parseInt(id);					
+							movies.add(movie);
+							fixedMovieIDMap.put(fileID, index);
+							index ++;
+							break;
+						}
+
+					}
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Goes through each rating and adds them and their users to the User Map.
+	 * For 1M dataset.
+	 * 
+	 * @param path - file that contains movie ratings by individual users
+	 * @return true if movies ArrayList has been populated and false if it has not
+	 * @throws IOException
+	 */
+	public static boolean readRatingsOneM(Path path) throws IOException {
+		int userID;
+		int movieID;
+		int rating;
+		
+		userMap = new UserMap(movies.size());
+		
+		if (movies == null) {
+			return false;
+		} else {
+			List<String> line;
+			String text;
+			
+			//Go through movie ratings file and populate usermap
+			try (
+					BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
+				) {
+				while ((text = reader.readLine()) != null){
+					line = parseTextOneM(text);
+					userID = Integer.parseInt(line.get(0)) - 1;     //all user IDs -1 to allow for userID 0
+					movieID = fixedMovieIDMap.get(Integer.parseInt(line.get(1)));    //all movie IDs -1 to allow for movieID 0
+					rating = Integer.parseInt(line.get(2));
+					userMap.addRating(userID, movieID, rating);
 				}
 			}
 			return true;
@@ -125,11 +240,12 @@ public class Recommender {
 	
 	/**
 	 * Goes through each word in the line; they are separated by tabs.
+	 * For 10K dataset.
 	 * 
 	 * @param text - line from file
 	 * @return List of words in the line
 	 */
-	public static List<String> parseText(String text) {
+	public static List<String> parseTextTenK(String text) {
 		ArrayList<String> words = new ArrayList<>();
 		String word = "";
 		
@@ -137,6 +253,32 @@ public class Recommender {
 			if (c != '\t'){
 				word += c;
 			} else {
+				words.add(word);
+				word = "";
+			}
+		}
+		if (!word.contentEquals("")){
+			words.add(word);
+		}
+		
+		return words;
+	}
+	
+	/**
+	 * Goes through each word in the line; they are separated by tabs.
+	 * For 1M dataset.
+	 * 
+	 * @param text - line from file
+	 * @return List of words in the line
+	 */
+	public static List<String> parseTextOneM(String text) {
+		ArrayList<String> words = new ArrayList<>();
+		String word = "";
+		
+		for (char c: text.toCharArray()) {
+			if (c != ':'){
+				word += c;
+			} else if (!word.contentEquals("")){
 				words.add(word);
 				word = "";
 			}
@@ -168,7 +310,7 @@ public class Recommender {
 
 		while (recommendations.size() < numOfRecs) {
 			//find top 5 similar users
-			for (i = 1; i < userMap.size(); i++) {
+			for (i = 0; i < userMap.size(); i++) {
 				//if the current user is not the same as the user we're finding the recommendations
 				//for, if the blacklist doesn't contain the current user we're looking at, and if
 				//the similarusers list doesn't contain the current user we're looking at...
@@ -194,7 +336,7 @@ public class Recommender {
 				double topRating = 0;
 				int[] simRatings = userMap.getRatings(similarUsers.get(i));
 				//go through each rating of the similar user
-				for (movieID = 1; movieID < simRatings.length; movieID++) {
+				for (movieID = 0; movieID < simRatings.length; movieID++) {
 					//if user has never seen the movie and the recommendations does not contain this movie yet			
 					if (ratings[movieID] == 0 && !recommendations.contains(movieID)) {
 						//if the rating is a 5, set it as the recommended movie and break
@@ -287,7 +429,7 @@ public class Recommender {
 		int similarity = 0;
 		int[] userRatings1 = userMap.getRatings(userID1);
 		int[] userRatings2 = userMap.getRatings(userID2);
-		for (int i = 1; i < userRatings1.length; i++) {
+		for (int i = 0; i < userRatings1.length; i++) {
 			similarity += (userRatings1[i] * userRatings2[i]);
 		}
 		return similarity;
@@ -318,7 +460,7 @@ public class Recommender {
 		int[] userRatings1 = userMap.getRatings(userID1);
 		int[] userRatings2 = userMap.getRatings(userID2);
 		//Calculate individual means (excluding 0's)
-		for (int i = 1; i < userRatings1.length; i++) {
+		for (int i = 0; i < userRatings1.length; i++) {
 			if (userRatings1[i] != 0) {
 				xMean += userRatings1[i];
 				xTotal ++;
@@ -332,7 +474,7 @@ public class Recommender {
 		yMean = yMean/yTotal;
 		
 		//Calculate numerator and denominator
-		for (int i = 1; i < userRatings1.length; i++) {
+		for (int i = 0; i < userRatings1.length; i++) {
 			if (userRatings1[i] != 0 && userRatings2[i] != 0) {
 				numerator += (userRatings1[i] - xMean) * (userRatings2[i] - yMean);
 				xDenom += Math.pow((userRatings1[i] - xMean), 2);
@@ -347,20 +489,20 @@ public class Recommender {
 	
 	/**
 	 * Generates matrix as a SparseMatrix using user ratings.
-	 * Rows represent users (userID-1) while columns represent movies (movieID-1).
-	 * There is off-by-one accounting because the dataset does not have ID 0.
+	 * Rows represent users (userID while columns represent movies (movieID).
 	 *
 	 * @return SparseMatrix matrix
 	 */
 	public static SparseMatrix generateMatrix() {
 		int[] ratings;
-		matrix = new SparseMatrix(userMap.size()-1, movies.size()-1);
+		//matrix = new SparseMatrix(userMap.size()-1, movies.size()-1);
+		matrix = new SparseMatrix(userMap.size(), movies.size());
 
-		for (int i = 1; i < userMap.size(); i ++) {
+		for (int i = 0; i < userMap.size(); i ++) {
 			ratings = userMap.getRatings(i);
-			for (int j = 1; j < ratings.length; j++) {
+			for (int j = 0; j < ratings.length; j++) {
 				if (ratings[j] != 0) {
-					matrix.set(i-1, j-1, ratings[j]);
+					matrix.set(/*i-1, j-1*/ i, j, ratings[j]);
 				}
 			}
 		}
@@ -390,12 +532,15 @@ public class Recommender {
 			
 		//create matrix
 		System.out.println("SVD...");
+		final long startTime = System.currentTimeMillis();
 		SingularValueDecomposition SVD = new SingularValueDecomposition(matrix);
+		final long endTime = System.currentTimeMillis();
+		System.out.println("Total execution time: " + (endTime - startTime) );
 			
 		//call get methods for U, V, and Sigma
-		System.out.println("Calculating Sigma...");
+		/*System.out.println("Calculating Sigma...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-		       new FileOutputStream("Sn.txt"), "utf-8"))) {
+		       new FileOutputStream("S_1M.txt"), "utf-8"))) {
 			Matrix S = SVD.getS();
 			for (i = 0; i < S.rowSize(); i ++) {
 				for (j = 0; j < S.columnSize(); j ++) {
@@ -403,11 +548,11 @@ public class Recommender {
 				}
 				writer.write("\n");
 			}
-		}
+		}*/
 			
 		System.out.println("Calculating U...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-		       new FileOutputStream("Un.txt"), "utf-8"))) {
+		       new FileOutputStream("U_1M.txt"), "utf-8"))) {
 			Matrix U = SVD.getU();
 			for (i = 0; i < U.rowSize(); i ++) {
 				for (j = 0; j < U.columnSize(); j ++) {
@@ -417,9 +562,9 @@ public class Recommender {
 			}
 		}
 		
-		System.out.println("Calculating V...");
+		/*System.out.println("Calculating V...");
 		try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-		       new FileOutputStream("Vn.txt"), "utf-8"))) {
+		       new FileOutputStream("V_1M.txt"), "utf-8"))) {
 			Matrix V = SVD.getV();
 			for (i = 0; i < V.rowSize(); i ++) {
 				for (j = 0; j < V.columnSize(); j ++) {
@@ -427,27 +572,132 @@ public class Recommender {
 				}
 				writer.write("\n");
 			}		
-		}
+		}*/
 			
 		System.out.println("DONE.");
 	}
 	
-	public static List<String> getMovies() {
+	/**
+	 * @return ArrayList of Movies
+	 */
+	public static ArrayList<String> getMovies() {
 		return movies;
 	}
 	
+	/**
+	 * @return Map of Users to Ratings
+	 */
 	public static UserMap getUserMap() {
 		return userMap;
+	}
+	
+	/**
+	 * Parses line from Sigma text file
+	 * 
+	 * @param text - line from Sigma text file
+	 * @return List of words parsed from the line
+	 */
+	public static List<String> parseTextSigma(String text) {
+		ArrayList<String> words = new ArrayList<>();
+		String word = "";
+		
+		for (char c: text.toCharArray()) {
+			if (c != ' '){
+				word += c;
+			} else {
+				words.add(word);
+				word = "";
+			}
+		}
+		if (!word.contentEquals("")){
+			words.add(word);
+		}
+		
+		return words;
+	}
+	
+	/**
+	 * Reads Sigma text file into ArrrayList
+	 * 
+	 * @param path - to Sigma text file
+	 * @throws IOException
+	 */
+	private static void readS(Path path) throws IOException {
+		S = new ArrayList<Double>();
+		
+		List<String> line;
+		String text;
+		int i;
+			
+		try (
+				BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
+			) {
+			i = 0;
+			while ((text = reader.readLine()) != null){
+				line = parseTextSigma(text);
+				S.add(Double.parseDouble(line.get(i)));
+				i ++;
+			}
+		}
+	}
+	
+	/**
+	 * Finds how many eigenvalues to retain
+	 * 
+	 * @param path - to Sigma text file
+	 * @return number of eigenvalues to retain
+	 * @throws IOException
+	 */
+	public static int findRetain(Path path) throws IOException {
+		readS(path);
+		double sum = (double) 0;
+		double num;
+		double percentage;
+		int i;
+		ArrayList<Double> variedSums = new ArrayList<Double>();
+		
+		for (i = 0; i < S.size(); i ++) {
+			num = S.get(i);
+			sum += num * num;
+			variedSums.add(sum);
+		}
+		
+		for (i = variedSums.size()-1; i >= 0; i --) {
+			percentage = variedSums.get(i)/sum;
+			if (percentage < 0.9) {
+				break;
+			}
+		}
+
+		//variedSums[i + 1] is the desirable one.
+		//keep i + 2 
+		return i + 2;	//this is the number of eigenvalues to retain
+		
 	}
 	
 	public static void main(String[] args) {
 		try {
 			System.out.println("Reading and importing movie titles from \"" + args[0] + "\"");
-			readMovies(Paths.get(/*"movies.txt"*/args[0]));
+			//readMoviesTenK(Paths.get("movies.txt"));
+			readMoviesOneM(Paths.get("movies1M.txt"));
 
 
 			System.out.println("Reading and importing movie ratings from \"" + args[1] + "\"");
-			readRatings(Paths.get(/*"movieRatings.txt"*/args[1]));
+			//readRatingsTenK(Paths.get("ratings.txt"));
+			readRatingsOneM(Paths.get("ratings1M.txt"));
+
+			/* Find SVD Matrices */
+            findSVDMatrices();
+			
+			System.out.println("10K Dataset: Retain " + findRetain(Paths.get("S_10K.txt")) + " eigenvalues out of rank " + 943);
+			System.out.println("1M Dataset: Retain " + findRetain(Paths.get("S_1M.txt")) + " eigenvalues out of rank " + 3883);
+
+			System.exit(0);
+			
+
+
+
+			
 			
 			algorithm = Integer.parseInt(args[2]);
 			if (algorithm < 0 || algorithm >= NUMOFALGORITHMS) {
@@ -475,18 +725,32 @@ public class Recommender {
 			for (int i = 0; i < recommendations.size(); i++) {
 				System.out.println(recommendations.get(i) + "\t" + movies.get(recommendations.get(i)));
 			}
-					
-			/*for (int j = 1; j < 51; j ++) {
-				double[] ratings = userMap.getRatings(j);
-				for (int k = 1; k < movies.size(); k ++) {
-					System.out.print(ratings[k]);
-				}
-				System.out.println();
-			}*/
 			
-			/* Find SVD Matrices */
-            findSVDMatrices();
+
 			
+//			System.out.println("M should be 3885. U should be 6040.");
+//			int movieID;
+//			int j = 0;
+//			for (int fileRating : fixedRatingsMap.keySet()) {
+//				movieID = fixedRatingsMap.get(fileRating);
+//				System.out.println(fileRating + " : " + movieID);
+//				System.out.println("Movie: " + movies.get(movieID));
+//				j ++;
+//				if (j > 225)
+//					break;
+//				
+//			}
+//			
+//			System.out.println("Movies: " + movies.size());
+//			System.out.println("Users: " + userMap.size());
+//			
+//			System.out.println("MovieID 90: " + movies.get(90));
+//			System.out.println("UserID 5: ");
+//			for (int rating : userMap.getRatings(5)) {
+//				System.out.print(rating + " ");
+//			}
+			
+            
 		} catch (IOException e) {
 			System.out.println("Text file(s) does not exist.");
 			e.printStackTrace();

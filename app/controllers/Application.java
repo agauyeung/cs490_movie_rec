@@ -11,7 +11,6 @@ import models.UserRegistration;
 import models.MovieRecommender;
 import models.Movies;
 import models.Users;
-
 import views.html.*;
 
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ public class Application extends Controller {
     //final static Form<Login> loginForm = Form.form(Login.class);
 
     List<Integer> randMovieIDs = null;
-    List<String> tenMoviesTest = new ArrayList<String>();
+    List<String> tenMoviesTest = null;
     MovieRecommender movRec = new MovieRecommender("movies.txt", "Vn.txt");
 
     //database stuff
@@ -119,6 +118,7 @@ public class Application extends Controller {
     /** DEMO */
     public Result rate() { 	    	
         randMovieIDs = movRec.getRandMovies();
+        tenMoviesTest = new ArrayList<String>();
         for (int i = 0; i < randMovieIDs.size(); i++) {
             tenMoviesTest.add(MovieRecommender.getMovieTitle(randMovieIDs.get(i)));
         }
