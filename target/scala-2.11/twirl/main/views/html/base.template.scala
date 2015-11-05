@@ -51,7 +51,7 @@ Seq[Any](format.raw/*1.32*/("""
         &#09;&#09;|&#09;&#09;
         <a href="history">Rating History</a>
         &#09;&#09;|&#09;&#09;
-        <a href="register">User Registration</a>
+        <a href="register_user">User Registration</a>
         &#09;&#09;|&#09;&#09;
         <a href="rate">Rate 10 Movies</a>
         &#09;&#09;|&#09;&#09;
@@ -84,10 +84,10 @@ Seq[Any](format.raw/*1.32*/("""
 object base extends base_Scope0.base
               /*
                   -- GENERATED --
-                  DATE: Sun Nov 01 22:27:10 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/base.scala.html
-                  HASH: febef81006fb317dbdd9623dfaf68f9dca699347
-                  MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1647->539|1673->544|2191->1035|2219->1042|2260->1056
+                  DATE: Wed Nov 04 17:41:45 PST 2015
+                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/base.scala.html
+                  HASH: 02c2ce6cb9df069ab264d555694422be0bb43dbf
+                  MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1647->539|1673->544|2196->1040|2224->1047|2265->1061
                   LINES: 27->1|32->1|34->3|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|47->16|47->16|63->32|63->32|65->34
                   -- GENERATED --
               */

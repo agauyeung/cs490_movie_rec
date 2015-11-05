@@ -20,15 +20,13 @@ import java.util.ListIterator;
 import java.util.Random;
 import java.util.TreeMap;
 
-import models.Recommender;
-
 import org.apache.mahout.math.Matrix;
 import org.apache.mahout.math.SparseMatrix;
 
 
 public class MovieRecommender {
 	
-	private static final int COLUMNSKEPT = Recommender.findRetain(Paths.get("S_1M.txt"));
+	private static final int COLUMNSKEPT = 100; /*Recommender.findRetain(Paths.get("S_100K.txt"));*/
 	private static final int MAXNUMOFRECS = 10;
 	
 	private static ArrayList<String> movies;
@@ -36,8 +34,7 @@ public class MovieRecommender {
 	
 	public MovieRecommender(String movieFile, String VFile){
 		try {
-			//Recommender.readMoviesTenK(Paths.get(movieFile));
-			Recommender.readMoviesOneM(Paths.get(movieFile));
+			Recommender.readMoviesTenK(Paths.get(movieFile));
 			movies = (ArrayList<String>) Recommender.getMovies();
 		
 			readV(Paths.get(VFile));
@@ -48,7 +45,7 @@ public class MovieRecommender {
 	}
 	
 	public int getNumOfMovies() {
-		return movies.size()-1;
+		return movies.size();
 	}
 	
 	/**
@@ -77,7 +74,7 @@ public class MovieRecommender {
 	}
 	
 	private void readV(Path path) throws IOException {
-		V = new SparseMatrix(movies.size() - 1, COLUMNSKEPT);
+		V = new SparseMatrix(movies.size(), COLUMNSKEPT);
 		
 		List<String> line;
 		String text;
@@ -105,7 +102,7 @@ public class MovieRecommender {
         int num = 0;
         System.out.println("SIZE " + movies.size());
         while(ranmov.size() < 10) {
-            num = rand.nextInt(movies.size() + 1);
+            num = rand.nextInt(movies.size());
 
             if(!ranmov.contains(num)) {
                 ranmov.add(num);
@@ -232,7 +229,7 @@ public class MovieRecommender {
     	SparseMatrix user = new SparseMatrix(1, getNumOfMovies());
 
     	Random rand = new Random();
-    	for(int y = 0; y < movies.size()-1; y++){
+    	for(int y = 0; y < movies.size(); y++){
     		user.set(0, y, rand.nextInt(6));
     	}
     	

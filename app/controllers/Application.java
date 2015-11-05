@@ -7,7 +7,6 @@ import play.mvc.*;
 import play.db.*;
 import play.data.*;
 import models.TenRatings;
-import models.UserRegistration;
 import models.MovieRecommender;
 import models.Movies;
 import models.Users;
@@ -24,7 +23,6 @@ import java.nio.file.Paths;
 public class Application extends Controller {
 
     final static Form<TenRatings> ratingsForm = Form.form(TenRatings.class);
-    final static Form<UserRegistration> regForm = Form.form(UserRegistration.class);
     final static Form<Users> dbRegForm = Form.form(Users.class);
     //final static Form<Login> loginForm = Form.form(Login.class);
 
@@ -48,9 +46,6 @@ public class Application extends Controller {
         return ok(history.render("Rating History"));
     }
     
-    public Result register() {
-        return ok(register.render("User Registration", regForm));
-    }
     
     public Result register_user() {
         return ok(register_user.render("User Registration", dbRegForm));

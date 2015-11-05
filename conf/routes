@@ -11,9 +11,6 @@ GET     /recommended                controllers.Application.recommended()
 # Rating History page
 GET     /history                    controllers.Application.history()
 
-# User Registration page
-GET     /register                    controllers.Application.register()
-
 # User_DB Registration page
 GET     /register_user                    controllers.Application.register_user()
 

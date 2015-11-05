@@ -650,8 +650,12 @@ public class Recommender {
 	 * @return number of eigenvalues to retain
 	 * @throws IOException
 	 */
-	public static int findRetain(Path path) throws IOException {
-		readS(path);
+	public static int findRetain(Path path){
+		try {
+			readS(path);
+		} catch (IOException e) {
+			System.out.println("readS failed IO.");
+		}
 		double sum = (double) 0;
 		double num;
 		double percentage;

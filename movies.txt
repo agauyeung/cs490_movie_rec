@@ -537,8 +537,7 @@
 537|My Own Private Idaho (1991)|01-Jan-1991||http://us.imdb.com/M/title-exact?My+Own+Private+Idaho+(1991)|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0
 538|Anastasia (1997)|01-Jan-1997||http://us.imdb.com/M/title-exact?Anastasia+(1997)|0|0|0|1|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0
 539|Mouse Hunt (1997)|01-Jan-1997||http://us.imdb.com/M/title-exact?imdb-title-119715|0|0|0|0|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0
-540|Money Train
-(1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Money%20Train%20(1995)|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0
+540|Money Train (1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Money%20Train%20(1995)|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0
 541|Mortal Kombat (1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Mortal%20Kombat%20(1995)|0|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0
 542|Pocahontas (1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Pocahontas%20(1995)|0|0|0|1|1|0|0|0|0|0|0|0|1|0|1|0|0|0|0
 543|Miserables, Les (1995)|01-Jan-1995||http://us.imdb.com/M/title-exact?Mis%E9rables%2C%20Les%20%281995%29|0|0|0|0|0|0|0|0|1|0|0|0|1|0|0|0|0|0|0

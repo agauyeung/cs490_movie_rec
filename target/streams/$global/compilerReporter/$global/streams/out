@@ -1,7 +1,15 @@
-[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Application.java:29:  inferred type does not conform to equality constraint(s)[0m
-[0m[[31merror[0m] [0m    inferred: models.UserRegistration[0m
-[0m[[31merror[0m] [0m    equality constraints(s): models.UserRegistration,models.Users[0m
-[0m[[31merror[0m] [0mForm.form(Users.class)[0m
-[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Application.java:57:  play.data.Form<models.UserRegistration> cannot be converted to play.data.Form<models.Users>[0m
-[0m[[31merror[0m] [0mdbRegForm[0m
-[0m[[0minfo[0m] [0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:15: exception java.io.UnsupportedEncodingException is never thrown in body of corresponding try statement[0m
+[0m[[31merror[0m] [0mcatch (UnsupportedEncodingException e) {[0m
+[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
+[0m[[31merror[0m] [0m			e.printStackTrace();[0m
+[0m[[31merror[0m] [0m		}[0m
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:18: exception java.io.FileNotFoundException is never thrown in body of corresponding try statement[0m
+[0m[[31merror[0m] [0mcatch (FileNotFoundException e) {[0m
+[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
+[0m[[31merror[0m] [0m			e.printStackTrace();[0m
+[0m[[31merror[0m] [0m		}[0m
+[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:21: exception java.io.IOException is never thrown in body of corresponding try statement[0m
+[0m[[31merror[0m] [0mcatch (IOException e) {[0m
+[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
+[0m[[31merror[0m] [0m			e.printStackTrace();[0m
+[0m[[31merror[0m] [0m		}[0m

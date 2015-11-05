@@ -62,8 +62,8 @@ Seq[Any](format.raw/*1.22*/("""
 object users extends users_Scope0.users
               /*
                   -- GENERATED --
-                  DATE: Sun Nov 01 22:27:28 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/users.scala.html
+                  DATE: Wed Nov 04 17:41:45 PST 2015
+                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/users.scala.html
                   HASH: d25f778f7a9f06c4f470116baeb7e1a26e70a70f
                   MATRIX: 750->1|865->21|893->23|950->55|984->74|1023->76|1052->79|1082->84|1095->89|1124->98|1155->103|1196->118|1209->123|1238->132|1270->137|1315->152|1343->153
                   LINES: 27->1|32->1|34->3|37->6|37->6|37->6|38->7|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|43->12|44->13

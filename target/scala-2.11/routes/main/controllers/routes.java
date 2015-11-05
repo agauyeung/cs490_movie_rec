@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Sun Nov 01 22:30:43 PST 2015
+// @SOURCE:/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/conf/routes
+// @DATE:Wed Nov 04 19:58:04 PST 2015
 
 package controllers;
 
