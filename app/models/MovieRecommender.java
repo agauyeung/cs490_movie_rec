@@ -26,7 +26,6 @@ import org.apache.mahout.math.SparseMatrix;
 
 public class MovieRecommender {
 	
-	private static final int COLUMNSKEPT = 100; /*Recommender.findRetain(Paths.get("S_100K.txt"));*/
 	private static final int MAXNUMOFRECS = 10;
 	
 	private static ArrayList<String> movies;
@@ -34,7 +33,9 @@ public class MovieRecommender {
 	
 	public MovieRecommender(String movieFile, String VFile){
 		try {
-			Recommender.readMoviesTenK(Paths.get(movieFile));
+			//Recommender.readMoviesTenK(Paths.get(movieFile));
+			Recommender.readMoviesOneM(Paths.get(movieFile));
+
 			movies = (ArrayList<String>) Recommender.getMovies();
 		
 			readV(Paths.get(VFile));
@@ -74,7 +75,6 @@ public class MovieRecommender {
 	}
 	
 	private void readV(Path path) throws IOException {
-		V = new SparseMatrix(movies.size(), COLUMNSKEPT);
 		
 		List<String> line;
 		String text;
@@ -84,9 +84,22 @@ public class MovieRecommender {
 				BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF8"))
 			) {
 			movie = 0;
+			
+			if ((text = reader.readLine()) != null){
+				line = parseText(text);
+				
+				System.out.println("Columns Retained: " + line.size());
+				
+				V = new SparseMatrix(movies.size(), line.size());
+				for (i = 0; i < line.size(); i ++) {
+					V.set(movie, i, Double.parseDouble(line.get(i)));
+				}
+				movie ++;
+			}
+			
 			while ((text = reader.readLine()) != null){
 				line = parseText(text);
-				for (i = 0; i < COLUMNSKEPT; i ++) {
+				for (i = 0; i < line.size(); i ++) {
 					V.set(movie, i, Double.parseDouble(line.get(i)));
 				}
 				movie ++;

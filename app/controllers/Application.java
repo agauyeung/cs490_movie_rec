@@ -28,7 +28,9 @@ public class Application extends Controller {
 
     List<Integer> randMovieIDs = null;
     List<String> tenMoviesTest = null;
-    MovieRecommender movRec = new MovieRecommender("movies.txt", "Vn.txt");
+    
+    //TODO: TIMER here to wrap construction of movRec object after SVD calc
+    MovieRecommender movRec = new MovieRecommender("movies_1M.txt", "V_1M_short.txt");
 
     //database stuff
 
