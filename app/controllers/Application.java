@@ -145,6 +145,12 @@ public class Application extends Controller {
         ratingsMap.put(randMovieIDs.get(8), Integer.parseInt(formMap.get("m9")));
         ratingsMap.put(randMovieIDs.get(9), Integer.parseInt(formMap.get("m10")));
 
+        /*for (int i = 0; i < ratingsMap.size(); i ++) {
+        	if (ratingsMap.get(i) != 0) {
+        		//add rating to database
+        	}
+        }*/
+        
         //Call getRecommendation() to populate recommendations ArrayList
         List<String> recommendations = movRec.getRecommendations(movRec.createNewUserVector(ratingsMap));
         

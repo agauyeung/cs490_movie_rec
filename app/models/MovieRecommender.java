@@ -28,8 +28,8 @@ public class MovieRecommender {
 	
 	private static final int MAXNUMOFRECS = 10;
 	
-	private ArrayList<String> movies;
-	private SparseMatrix V;
+	private static ArrayList<String> movies;
+	private static SparseMatrix V;
 	
 //	public MovieRecommender(List<Movies> movies, String VFile){
 //		try {
