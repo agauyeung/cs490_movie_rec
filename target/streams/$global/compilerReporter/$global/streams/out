@@ -1,15 +1,7 @@
-[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:15: exception java.io.UnsupportedEncodingException is never thrown in body of corresponding try statement[0m
-[0m[[31merror[0m] [0mcatch (UnsupportedEncodingException e) {[0m
-[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
-[0m[[31merror[0m] [0m			e.printStackTrace();[0m
-[0m[[31merror[0m] [0m		}[0m
-[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:18: exception java.io.FileNotFoundException is never thrown in body of corresponding try statement[0m
-[0m[[31merror[0m] [0mcatch (FileNotFoundException e) {[0m
-[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
-[0m[[31merror[0m] [0m			e.printStackTrace();[0m
-[0m[[31merror[0m] [0m		}[0m
-[0m[[31merror[0m] [0m/home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/models/Retask.java:21: exception java.io.IOException is never thrown in body of corresponding try statement[0m
-[0m[[31merror[0m] [0mcatch (IOException e) {[0m
-[0m[[31merror[0m] [0m			// TODO Auto-generated catch block[0m
-[0m[[31merror[0m] [0m			e.printStackTrace();[0m
-[0m[[31merror[0m] [0m		}[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/master/cs490_movie_rec/app/views/account/settings/email.scala.html:23: unclosed character literal[0m
+[0m[[31merror[0m] [0m            <input type="submit" class="btn btn-primary" value="@Messages('validate')">[0m
+[0m[[31merror[0m] [0m                                                                                   ^[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/master/cs490_movie_rec/app/views/account/settings/email.scala.html:27: ')' expected but '}' found.[0m
+[0m[[31merror[0m] [0m}[0m
+[0m[[31merror[0m] [0m ^[0m
+[0m[[31merror[0m] [0mtwo errors found[0m

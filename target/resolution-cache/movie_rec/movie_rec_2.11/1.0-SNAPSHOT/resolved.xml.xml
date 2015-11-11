@@ -4,7 +4,7 @@
 		module="movie_rec_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20151104174146"
+		publication="20151109181427"
 	>
 		<description>
 		movie_rec
@@ -50,5 +50,6 @@
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.4.3" conf="compile->default(compile)"/>
 		<dependency org="mysql" name="mysql-connector-java" rev="5.1.36" conf="compile->default(compile)"/>
 		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.9.Final" conf="compile->default(compile)"/>
+		<dependency org="org.webjars" name="bootstrap" rev="3.3.5" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
