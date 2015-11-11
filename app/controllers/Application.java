@@ -31,6 +31,7 @@ public class Application extends Controller {
     
     //TODO: TIMER here to wrap construction of movRec object after SVD calc
     MovieRecommender movRec = new MovieRecommender("movies_1M.txt", "V_1M_short.txt");
+    //MovieRecommender movRec = new MovieRecommender(Movies.find.all(), "V_1M_short.txt");
 
     //database stuff
 
