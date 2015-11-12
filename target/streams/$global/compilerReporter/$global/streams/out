@@ -1,8 +1,7 @@
-[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Recommender.java:27: cannot find symbol[0m
-[0m[[31merror[0m] [0m  symbol:   method Form(java.lang.Class<models.TenRatings>)[0m
-[0m[[31merror[0m] [0m  location: class controllers.Recommender[0m
-[0m[[31merror[0m] [0mForm[0m
-[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/controllers/Recommender.java:28: cannot find symbol[0m
-[0m[[31merror[0m] [0m  symbol:   method Form(java.lang.Class<models.Users>)[0m
-[0m[[31merror[0m] [0m  location: class controllers.Recommender[0m
-[0m[[31merror[0m] [0mForm[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/views/rate.scala.html:10: value name is not a member of String[0m
+[0m[[31merror[0m] [0m            @movie.name[0m
+[0m[[31merror[0m] [0m                   ^[0m
+[0m[[31merror[0m] [0m/Users/alphaneo1/movie/cs490_movie_rec/app/views/rate.scala.html:14: value name is not a member of (String, Int)[0m
+[0m[[31merror[0m] [0m          <li>@movie.name[0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0mtwo errors found[0m

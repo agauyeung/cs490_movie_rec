@@ -3,13 +3,13 @@
 @(title: String, movies: util.List[String], ratingsForm: play.data.Form[TenRatings])
 @import helper._
 
-
 @base(title) {	@*using main template, with page title as arg*@
 
     @form(action = routes.Recommender.results(), 'id -> "ratingsForm") {
         @for((movie, index) <- movies.zipWithIndex) {
-            
+            @movie
         }
+        
         <input type="submit" class="tenratings" value="Get Recommendations">         
     }
     @* Which variable the value goes to *@
