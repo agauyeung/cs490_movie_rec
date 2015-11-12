@@ -31,21 +31,6 @@ public class MovieRecommender {
 	private static ArrayList<String> movies;
 	private static SparseMatrix V;
 	
-//	public MovieRecommender(List<Movies> movies, String VFile){
-//		try {
-//
-//			this.movies = new ArrayList<String>();
-//			for (int i = 0; i < movies.size(); i ++) {
-//				this.movies.add(i, movies.get(i).name);
-//			}
-//		
-//			readV(Paths.get(VFile));
-//			System.out.println("Movie Recommender object initialized. All files read successfully.");
-//		} catch (IOException e) {
-//			System.out.println("The movie file or V file not valid.");
-//		}
-//	}
-	
 	public MovieRecommender(String movieFile, String VFile){
 		try {
 			//Recommender.readMoviesTenK(Paths.get(movieFile));

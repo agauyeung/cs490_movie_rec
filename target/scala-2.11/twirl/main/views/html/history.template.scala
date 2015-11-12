@@ -11,15 +11,8 @@ import controllers._
 import play.api.i18n._
 import views.html._
 import play.api.templates.PlayMagic._
-import java.lang._
-import java.util._
-import scala.collection.JavaConversions._
-import scala.collection.JavaConverters._
-import play.core.j.PlayMagicForJava._
-import play.mvc._
-import play.data._
-import play.api.data.Field
-import play.mvc.Http.Context.Implicit._
+import play.api.mvc._
+import play.api.data._
 
 class history extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
@@ -55,11 +48,11 @@ Seq[Any](format.raw/*1.17*/("""
 object history extends history_Scope0.history
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 04 17:41:45 PST 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/history.scala.html
-                  HASH: ac16462e0221a72d186e68495dcd44d5f460c5b3
-                  MATRIX: 749->1|859->16|887->19|906->30|945->32|973->80|1006->124|1037->126
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|37->6
+                  DATE: Wed Nov 11 15:29:46 PST 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/history.scala.html
+                  HASH: 8569b99322bd4919720e9cd5a5771f25fd22fd5f
+                  MATRIX: 531->1|641->16|669->19|688->30|727->32|755->80|788->124|819->126
+                  LINES: 20->1|25->1|27->3|27->3|27->3|27->3|29->5|30->6
                   -- GENERATED --
               */
           

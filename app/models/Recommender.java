@@ -23,7 +23,6 @@ import org.apache.mahout.math.SingularValueDecomposition;
 import org.apache.mahout.math.SparseMatrix;
 
 
-
 public class Recommender {
 	
 	/**

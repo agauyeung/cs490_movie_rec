@@ -11,15 +11,8 @@ import controllers._
 import play.api.i18n._
 import views.html._
 import play.api.templates.PlayMagic._
-import java.lang._
-import java.util._
-import scala.collection.JavaConversions._
-import scala.collection.JavaConverters._
-import play.core.j.PlayMagicForJava._
-import play.mvc._
-import play.data._
-import play.api.data.Field
-import play.mvc.Http.Context.Implicit._
+import play.api.mvc._
+import play.api.data._
 
 class registered extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,String,play.twirl.api.HtmlFormat.Appendable] {
 
@@ -57,11 +50,11 @@ Seq[Any](format.raw/*1.35*/("""
 object registered extends registered_Scope0.registered
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 04 17:41:45 PST 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/registered.scala.html
-                  HASH: c7e9fc740d56cc1cb729e7f2e6731a02b4393098
-                  MATRIX: 762->1|890->34|918->37|937->48|976->50|1004->98|1036->104|1072->114|1100->122|1210->203
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|36->5|36->5|39->8
+                  DATE: Wed Nov 11 15:29:47 PST 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/registered.scala.html
+                  HASH: 358ac9e1c31eab10acac7d133ea030148825b4a1
+                  MATRIX: 544->1|672->34|700->37|719->48|758->50|786->98|818->104|854->114|882->122|992->203
+                  LINES: 20->1|25->1|27->3|27->3|27->3|27->3|29->5|29->5|29->5|32->8
                   -- GENERATED --
               */
           

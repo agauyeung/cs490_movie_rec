@@ -2,3 +2,9 @@ eclipse with-source=true
 eclipsify
 eclipse
 help
+ui
+run
+play clean compile
+clean
+compile
+ls

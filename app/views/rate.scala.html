@@ -1,15 +1,14 @@
-@(title: String, movies: List[String], ratingsForm: Form[TenRatings])
+@import java.util
+@import play.i18n._
+@(title: String, movies: util.List[String], ratingsForm: play.data.Form[TenRatings])
 @import helper._
+
 
 @base(title) {	@*using main template, with page title as arg*@
 
-    @form(action = routes.Application.results(), 'id -> "ratingsForm") {
+    @form(action = routes.Recommender.results(), 'id -> "ratingsForm") {
         @for((movie, index) <- movies.zipWithIndex) {
-            @inputRadioGroup(
-                ratingsForm("m" + (index+1)),  
-                options = Seq("0" -> "0", "1" -> "1", "2" -> "2", "3" -> "3", "4" -> "4", "5" -> "5"),
-                '_label -> movie
-            ) 
+            
         }
         <input type="submit" class="tenratings" value="Get Recommendations">         
     }

@@ -11,15 +11,8 @@ import controllers._
 import play.api.i18n._
 import views.html._
 import play.api.templates.PlayMagic._
-import java.lang._
-import java.util._
-import scala.collection.JavaConversions._
-import scala.collection.JavaConverters._
-import play.core.j.PlayMagicForJava._
-import play.mvc._
-import play.data._
-import play.api.data.Field
-import play.mvc.Http.Context.Implicit._
+import play.api.mvc._
+import play.api.data._
 
 class recommended extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
@@ -55,11 +48,11 @@ Seq[Any](format.raw/*1.17*/("""
 object recommended extends recommended_Scope0.recommended
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 04 17:41:45 PST 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/recommended.scala.html
-                  HASH: 628920ed7f168d8eebb1eab84c73b003f18aa859
-                  MATRIX: 757->1|867->16|895->19|914->30|953->32|981->80|1014->124|1045->126
-                  LINES: 27->1|32->1|34->3|34->3|34->3|34->3|36->5|37->6
+                  DATE: Wed Nov 11 15:29:47 PST 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/recommended.scala.html
+                  HASH: 83c97e297a89da83287094de69f08f2731724bef
+                  MATRIX: 539->1|649->16|677->19|696->30|735->32|763->80|796->124|827->126
+                  LINES: 20->1|25->1|27->3|27->3|27->3|27->3|29->5|30->6
                   -- GENERATED --
               */
           

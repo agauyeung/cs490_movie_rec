@@ -11,45 +11,41 @@ import controllers._
 import play.api.i18n._
 import views.html._
 import play.api.templates.PlayMagic._
-import java.lang._
-import java.util._
-import scala.collection.JavaConversions._
-import scala.collection.JavaConverters._
-import play.core.j.PlayMagicForJava._
-import play.mvc._
-import play.data._
-import play.api.data.Field
-import play.mvc.Http.Context.Implicit._
+import play.api.mvc._
+import play.api.data._
 
-class view extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Movies],play.twirl.api.HtmlFormat.Appendable] {
+     object view_Scope1 {
+import java.util
+
+class view extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[util.List[Movies],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(movies: List[Movies]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(movies: util.List[Movies]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.24*/("""
+Seq[Any](format.raw/*2.29*/("""
 
-"""),format.raw/*3.1*/("""<h1>View All Movies/<h1>
+"""),format.raw/*4.1*/("""<h1>View All Movies/<h1>
 
 <ul> 
-"""),_display_(/*6.2*/for(movie <- movies) yield /*6.22*/ {_display_(Seq[Any](format.raw/*6.24*/("""
-  """),format.raw/*7.3*/("""<li>"""),_display_(/*7.8*/movie/*7.13*/.name),format.raw/*7.18*/("""
-    """),format.raw/*8.5*/("""<ul> 
-        """),_display_(/*9.10*/movie/*9.15*/.director),format.raw/*9.24*/("""
-    """),format.raw/*10.5*/("""</ul>
+"""),_display_(/*7.2*/for(movie <- movies) yield /*7.22*/ {_display_(Seq[Any](format.raw/*7.24*/("""
+  """),format.raw/*8.3*/("""<li>"""),_display_(/*8.8*/movie/*8.13*/.name),format.raw/*8.18*/("""
+    """),format.raw/*9.5*/("""<ul> 
+        """),_display_(/*10.10*/movie/*10.15*/.director),format.raw/*10.24*/("""
+    """),format.raw/*11.5*/("""</ul>
   </li>
-""")))}),format.raw/*12.2*/(""" 
-"""),format.raw/*13.1*/("""</ul>
+""")))}),format.raw/*13.2*/(""" 
+"""),format.raw/*14.1*/("""</ul>
 """))
       }
     }
   }
 
-  def render(movies:List[Movies]): play.twirl.api.HtmlFormat.Appendable = apply(movies)
+  def render(movies:util.List[Movies]): play.twirl.api.HtmlFormat.Appendable = apply(movies)
 
-  def f:((List[Movies]) => play.twirl.api.HtmlFormat.Appendable) = (movies) => apply(movies)
+  def f:((util.List[Movies]) => play.twirl.api.HtmlFormat.Appendable) = (movies) => apply(movies)
 
   def ref: this.type = this
 
@@ -57,16 +53,17 @@ Seq[Any](format.raw/*1.24*/("""
 
 
 }
+}
 
 /**/
-object view extends view_Scope0.view
+object view extends view_Scope0.view_Scope1.view
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 04 17:41:45 PST 2015
-                  SOURCE: /home/agauyeung/typesafe_activator_1.3.6/cs490_movie_rec/app/views/view.scala.html
-                  HASH: b17195fb715d44840671890982af1f3dd3c8ba6d
-                  MATRIX: 749->1|866->23|894->25|952->58|987->78|1026->80|1055->83|1085->88|1098->93|1123->98|1154->103|1195->118|1208->123|1237->132|1269->137|1314->152|1343->154
-                  LINES: 27->1|32->1|34->3|37->6|37->6|37->6|38->7|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|43->12|44->13
+                  DATE: Wed Nov 11 16:23:07 PST 2015
+                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/view.scala.html
+                  HASH: dad6aca2292a7147d4662cd41fa6675d4554a971
+                  MATRIX: 580->19|702->46|730->48|788->81|823->101|862->103|891->106|921->111|934->116|959->121|990->126|1032->141|1046->146|1076->155|1108->160|1153->175|1182->177
+                  LINES: 23->2|28->2|30->4|33->7|33->7|33->7|34->8|34->8|34->8|34->8|35->9|36->10|36->10|36->10|37->11|39->13|40->14
                   -- GENERATED --
               */
           
