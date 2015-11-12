@@ -1,6 +1,9 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/application.conf,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/evolutions,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/evolutions)[0m
 [0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/logback.xml,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/logback.xml)[0m
 [0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/messages.en,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/messages.en)[0m
 [0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/messages.es,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/messages.es)[0m
 [0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/routes,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/evolutions/default,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/alphaneo1/movie/cs490_movie_rec/conf/evolutions/default/1.sql,/Users/alphaneo1/movie/cs490_movie_rec/target/scala-2.11/classes/evolutions/default/1.sql)[0m

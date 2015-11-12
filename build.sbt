@@ -4,7 +4,7 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, PlayEbean)
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 scalacOptions ++= Seq("-feature", "-deprecation", "-unchecked", "-language:reflectiveCalls", "-language:postfixOps", "-language:implicitConversions")
 
@@ -41,6 +41,5 @@ libraryDependencies ++= Seq(
 	"mysql" % "mysql-connector-java" % "5.1.36",
 	"org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final"
 )
-
 
 fork in run := true

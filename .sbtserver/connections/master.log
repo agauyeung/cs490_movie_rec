@@ -1,13 +1,35 @@
-New log file opened at Wed Nov 11 18:59:22 PST 2015 by 1158@MacBook-Pro.local
-Taking next connection to: 49497
-New client attempting to connect on port: 49498-49497
-  Address = /10.0.0.17:49497
-This client on port 49498 has uuid b811ac4e-a7bb-40c9-b0f1-4d95ecf3bbd9 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-b811ac4e-a7bb-40c9-b0f1-4d95ecf3bbd9
-Taking next connection to: 49497
-New client attempting to connect on port: 49499-49497
-  Address = /10.0.0.17:49497
-Handshake exception on socket: 49499
+New log file opened at Wed Nov 11 19:29:29 PST 2015 by 2443@MacBook-Pro.local
+Taking next connection to: 50164
+New client attempting to connect on port: 50165-50164
+  Address = /10.0.0.17:50164
+This client on port 50165 has uuid 954af36f-f3fe-4902-9a69-d5224b64259f configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-954af36f-f3fe-4902-9a69-d5224b64259f
+Taking next connection to: 50164
+New client attempting to connect on port: 50166-50164
+  Address = /10.0.0.17:50164
+Handshake exception on socket: 50166
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 50164
+New client attempting to connect on port: 50167-50164
+  Address = /10.0.0.17:50164
+This client on port 50167 has uuid 98db8d2e-6892-48fd-a6d7-846ad18278e5 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-954af36f-f3fe-4902-9a69-d5224b64259f, activator-98db8d2e-6892-48fd-a6d7-846ad18278e5
+Taking next connection to: 50164
+New client attempting to connect on port: 50168-50164
+  Address = /10.0.0.17:50164
+Handshake exception on socket: 50168
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -17,27 +39,9 @@ Caused by: java.io.EOFException
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 49497
-New client attempting to connect on port: 49500-49497
-  Address = /10.0.0.17:49497
-This client on port 49500 has uuid 72b995da-5e5d-4e89-9bb2-c02d5109e5e9 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-b811ac4e-a7bb-40c9-b0f1-4d95ecf3bbd9, activator-72b995da-5e5d-4e89-9bb2-c02d5109e5e9
-Taking next connection to: 49497
-New client attempting to connect on port: 49506-49497
-  Address = /10.0.0.17:49497
-Handshake exception on socket: 49506
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 49497
-New client attempting to connect on port: 49507-49497
-  Address = /10.0.0.17:49497
-This client on port 49507 has uuid 342f864b-354a-4f2d-a035-3384df84f8f1 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-b811ac4e-a7bb-40c9-b0f1-4d95ecf3bbd9, play-fork-run-342f864b-354a-4f2d-a035-3384df84f8f1
-Taking next connection to: 49497
+Taking next connection to: 50164
+New client attempting to connect on port: 50169-50164
+  Address = /10.0.0.17:50164
+This client on port 50169 has uuid 91d79196-e7a3-4bb5-b609-24e770d66914 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-954af36f-f3fe-4902-9a69-d5224b64259f, play-fork-run-91d79196-e7a3-4bb5-b609-24e770d66914
+Taking next connection to: 50164
