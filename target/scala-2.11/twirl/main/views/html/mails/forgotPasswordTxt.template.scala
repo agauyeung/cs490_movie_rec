@@ -49,8 +49,8 @@ Seq[Any](format.raw/*1.59*/("""
 object forgotPasswordTxt extends forgotPasswordTxt_Scope0.forgotPasswordTxt
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/mails/forgotPasswordTxt.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/mails/forgotPasswordTxt.scala.html
                   HASH: 89b93064b13e18238bd8b66ea4b36bd811e45c4b
                   MATRIX: 573->1|725->58|752->60|806->94|834->97|857->101|885->104|940->139|968->142
                   LINES: 20->1|25->1|26->2|26->2|28->4|28->4|30->6|30->6|32->8

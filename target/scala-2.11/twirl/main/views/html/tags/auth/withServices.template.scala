@@ -45,8 +45,8 @@ Seq[Any](format.raw/*1.57*/("""
 object withServices extends withServices_Scope0.withServices
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/tags/auth/withServices.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/tags/auth/withServices.scala.html
                   HASH: 8e4f071c013dda643ca42ebe7f7716371009a1ca
                   MATRIX: 568->1|718->56|745->58|821->126|860->128|888->131|911->135
                   LINES: 20->1|25->1|26->2|26->2|26->2|27->3|27->3

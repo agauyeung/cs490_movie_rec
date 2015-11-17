@@ -46,8 +46,8 @@ Seq[Any](format.raw/*1.88*/("""
 object error extends error_Scope0.error
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/errors/error.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/errors/error.scala.html
                   HASH: 87149e36d1d820146832c2a132221bf7d9160e2a
                   MATRIX: 575->1|756->87|783->89|795->94|856->147|895->149|923->151|960->162|1011->193|1047->204|1107->244
                   LINES: 20->1|25->1|26->2|26->2|26->2|26->2|27->3|27->3|27->3|28->4|28->4

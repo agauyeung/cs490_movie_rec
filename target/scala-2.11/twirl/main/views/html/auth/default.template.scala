@@ -49,8 +49,8 @@ Seq[Any](format.raw/*1.94*/("""
 object default extends default_Scope0.default
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/auth/default.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/auth/default.scala.html
                   HASH: 4d9d8e8238c97c77521a6b740610814be972bdc6
                   MATRIX: 563->1|750->93|777->95|789->100|861->164|900->166|928->168|1016->231|1043->238|1072->241
                   LINES: 20->1|25->1|26->2|26->2|26->2|26->2|27->3|29->5|29->5|30->6

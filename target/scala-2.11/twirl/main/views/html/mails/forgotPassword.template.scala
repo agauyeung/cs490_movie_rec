@@ -51,8 +51,8 @@ Seq[Any](format.raw/*1.59*/("""
 object forgotPassword extends forgotPassword_Scope0.forgotPassword
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/mails/forgotPassword.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/mails/forgotPassword.scala.html
                   HASH: 22594ebddc05f4d3a582f38e36929defadb21c00
                   MATRIX: 567->1|719->58|746->59|826->114|880->148|922->164|946->168|975->171|999->175|1034->185|1089->220|1124->230|1165->251
                   LINES: 20->1|25->1|26->2|29->5|29->5|30->6|30->6|30->6|30->6|31->7|31->7|32->8|32->8

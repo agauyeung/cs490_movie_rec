@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.45*/("""
 object serviceAorServiceB extends serviceAorServiceB_Scope0.serviceAorServiceB
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/serviceAorServiceB.scala.html
+                  DATE: Mon Nov 16 18:35:10 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/serviceAorServiceB.scala.html
                   HASH: d3af4739ed311d1e90955323cf68f257fa455a9e
                   MATRIX: 560->1|723->44|751->73|778->75|790->80|884->166|923->168|953->172|1176->365
                   LINES: 20->1|25->1|27->4|28->5|28->5|28->5|28->5|30->7|34->11

@@ -9,23 +9,26 @@ field.email=Email
 field.password=Password
 field.password.repeat=Repeat password
 field.services=Services
+field.radio = Radio Buttons
 
 submit=Submit
 reset=Reset
 back=Back
 go.index=Go to index
+radio = Radio
+rate = Radio
 
 ################################################################################################
 # TOPBAR
 
 topbar.index=Index
 topbar.myaccount=My account
-topbar.hello=Hello {0}!<br>Your services are: {1}
+topbar.hello=Hello {0}!<br>Your roles are: {1}
 
 ################################################################################################
 # INDEX
 
-index.title=Authorization example
+index.title=Authorization
 index.intro.logged=You are now logged as <span class="text-success">{0}</span>, so you can go to \
 <a href="{1}">My account</a> section to see your contact info.<br>\
 Of course you can <a href="{2}">sign out</a>.

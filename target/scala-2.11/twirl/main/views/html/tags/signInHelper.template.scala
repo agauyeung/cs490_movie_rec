@@ -60,8 +60,8 @@ Seq[Any](format.raw/*1.4*/("""
 object signInHelper extends signInHelper_Scope0.signInHelper
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/tags/signInHelper.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/tags/signInHelper.scala.html
                   HASH: d7fba5d4d248c95f97d655b6c2338cbdcf7385b1
                   MATRIX: 539->1|635->3|662->4|978->294|990->298|1016->315|1064->325|1095->329|1150->357|1163->361|1190->367|1270->417|1299->419
                   LINES: 20->1|25->1|26->2|36->12|36->12|36->12|36->12|37->13|38->14|38->14|38->14|41->17|42->18

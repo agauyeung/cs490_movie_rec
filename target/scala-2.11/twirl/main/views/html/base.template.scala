@@ -63,8 +63,8 @@ Seq[Any](format.raw/*1.32*/("""
 object base extends base_Scope0.base
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 17:56:32 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/base.scala.html
+                  DATE: Mon Nov 16 18:35:10 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/base.scala.html
                   HASH: b0088873cb26d3fb2dbe4ac04472845a8313add7
                   MATRIX: 530->1|655->31|686->36|748->72|773->77|1296->573|1324->580|1365->594
                   LINES: 20->1|25->1|26->2|27->3|27->3|43->19|43->19|45->21

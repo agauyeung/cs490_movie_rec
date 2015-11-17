@@ -123,7 +123,7 @@ public class Recommender extends Controller {
         Form<TenRatings> filledForm = ratingsForm.bindFromRequest();
         Map<String, String> formMap = filledForm.data();
 
-        /** DO NOT USE filledForm.get() because Eclipse Build interferes with it
+        /** DO NOT filledForm.get() because Eclipse Build interferes with it
          *  WILL GET 0 or NULL values.
          */
         

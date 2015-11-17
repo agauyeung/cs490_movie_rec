@@ -47,8 +47,8 @@ Seq[Any](format.raw/*1.67*/("""
 object signedUp extends signedUp_Scope0.signedUp
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/auth/signedUp.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/auth/signedUp.scala.html
                   HASH: de1a4b334428a475b3755cb293b54a1210e4d1cb
                   MATRIX: 559->1|719->66|746->68|799->113|838->115|866->117|895->121|955->161|990->171|1034->195|1076->211|1095->222|1140->247|1169->250|1209->270
                   LINES: 20->1|25->1|26->2|26->2|26->2|27->3|27->3|27->3|28->4|28->4|29->5|29->5|29->5|29->5|29->5

@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.45*/("""
 object serviceAandServiceB extends serviceAandServiceB_Scope0.serviceAandServiceB
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/serviceAandServiceB.scala.html
+                  DATE: Mon Nov 16 18:35:10 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/serviceAandServiceB.scala.html
                   HASH: 38fdcf0101746f87534ec796b46d399735f5ace0
                   MATRIX: 562->1|725->44|753->73|780->75|792->80|887->167|926->169|956->173|1181->368
                   LINES: 20->1|25->1|27->4|28->5|28->5|28->5|28->5|30->7|34->11

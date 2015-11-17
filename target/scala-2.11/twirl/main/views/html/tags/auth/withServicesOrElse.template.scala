@@ -47,8 +47,8 @@ Seq[Any](format.raw/*1.75*/("""
 object withServicesOrElse extends withServicesOrElse_Scope0.withServicesOrElse
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/tags/auth/withServicesOrElse.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/tags/auth/withServicesOrElse.scala.html
                   HASH: 6319e7591c93c57a9fea879332ecd1fb047319c2
                   MATRIX: 585->1|753->74|780->76|856->144|895->146|923->149|946->153|965->156|976->161|1013->162|1041->165|1071->175
                   LINES: 20->1|25->1|26->2|26->2|26->2|27->3|27->3|28->4|28->4|28->4|29->5|29->5

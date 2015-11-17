@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.59*/("""
 object welcome extends welcome_Scope0.welcome
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/mails/welcome.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/mails/welcome.scala.html
                   HASH: c5891de3dd150a0b25b8c5914f09cb9de9691f16
                   MATRIX: 553->1|705->58|732->59|812->114|868->150|903->160|955->192|997->208|1021->212|1050->215|1074->219|1109->229|1162->262|1197->272|1238->293
                   LINES: 20->1|25->1|26->2|29->5|29->5|30->6|30->6|31->7|31->7|31->7|31->7|32->8|32->8|33->9|33->9

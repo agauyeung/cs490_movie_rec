@@ -48,8 +48,8 @@ Seq[Any](format.raw/*1.17*/("""
 object recommended extends recommended_Scope0.recommended
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/recommended.scala.html
+                  DATE: Mon Nov 16 18:35:10 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/recommended.scala.html
                   HASH: 83c97e297a89da83287094de69f08f2731724bef
                   MATRIX: 539->1|649->16|677->19|696->30|735->32|763->80|796->124|827->126
                   LINES: 20->1|25->1|27->3|27->3|27->3|27->3|29->5|30->6

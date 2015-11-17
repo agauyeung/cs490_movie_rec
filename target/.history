@@ -8,3 +8,11 @@ play clean compile
 clean
 compile
 ls
+play clean-all
+play
+clean
+clean all
+clean *
+clean -a
+clean
+exit

@@ -1,16 +1,21 @@
 @import java.util
 @import play.i18n._
-@(title: String, movies: util.List[String], ratingsForm: play.data.Form[TenRatings])
+@(title: String, movies: util.List[String], ratingsForm: Form[TenRatings])(implicit messages: Messages)
 @import helper._
 
 @base(title) {	@*using main template, with page title as arg*@
 
+    <h2>View Movies to Rate/<h2>
+
     @form(action = routes.Recommender.results(), 'id -> "ratingsForm") {
         @for((movie, index) <- movies.zipWithIndex) {
-            @movie
+            @inputRadioGroup(
+                ratingsForm("m" + (index+1)),
+                options = TenRating.map("0" -> "0", "1" -> "1", "2" -> "2", "3" -> "3", "4" -> "4", "5" -> "5"),
+                '_label -> movie
+            )
         }
-        
-        <input type="submit" class="tenratings" value="Get Recommendations">         
+        <input type="submit" class="tenratings" value="Get Recommendations">
     }
     @* Which variable the value goes to *@
 }

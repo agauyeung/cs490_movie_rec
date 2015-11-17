@@ -51,8 +51,8 @@ Seq[Any](format.raw/*1.59*/("""
 object welcomeTxt extends welcomeTxt_Scope0.welcomeTxt
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/mails/welcomeTxt.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/mails/welcomeTxt.scala.html
                   HASH: 94f9f169b2554e017f86cbfa644fcce3282e48de
                   MATRIX: 559->1|711->58|738->60|794->96|822->99|874->131|902->134|925->138|953->141|1006->174|1035->177
                   LINES: 20->1|25->1|26->2|26->2|28->4|28->4|30->6|30->6|32->8|32->8|34->10

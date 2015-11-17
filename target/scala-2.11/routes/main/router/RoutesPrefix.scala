@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/alphaneo1/movie/cs490_movie_rec/conf/routes
-// @DATE:Wed Nov 11 16:04:25 PST 2015
+// @SOURCE:/Users/alphaneo1/nmovie/cs490_movie_rec/conf/routes
+// @DATE:Mon Nov 16 18:35:09 PST 2015
 
 
 package router {

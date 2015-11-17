@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.45*/("""
 object settings extends settings_Scope0.settings
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/settings.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/settings.scala.html
                   HASH: 8784152d89524617b1096bdd0257a64f28d66a14
                   MATRIX: 540->1|703->44|731->73|758->75|770->80|843->145|882->147|912->151|1087->296
                   LINES: 20->1|25->1|27->4|28->5|28->5|28->5|28->5|30->7|34->11

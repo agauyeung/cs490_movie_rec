@@ -46,8 +46,8 @@ Seq[Any](format.raw/*1.43*/("""
 object almostSignedUp extends almostSignedUp_Scope0.almostSignedUp
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/auth/almostSignedUp.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/auth/almostSignedUp.scala.html
                   HASH: ccd1b4357365eabbede6c3ba8d0065ce235d8014
                   MATRIX: 557->1|693->42|720->44|755->71|794->73|822->75|851->79|911->119|946->129|1001->164
                   LINES: 20->1|25->1|26->2|26->2|26->2|27->3|27->3|27->3|28->4|28->4

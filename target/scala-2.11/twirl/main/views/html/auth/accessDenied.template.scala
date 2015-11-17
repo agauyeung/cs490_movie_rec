@@ -47,8 +47,8 @@ Seq[Any](format.raw/*1.83*/("""
 object accessDenied extends accessDenied_Scope0.accessDenied
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/auth/accessDenied.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/auth/accessDenied.scala.html
                   HASH: 6e01c634690e70ea10feb30ce9538d5ae0b22de5
                   MATRIX: 575->1|751->82|778->84|790->89|850->141|889->143|917->146|928->150|983->185|1011->187|1063->213|1107->237|1165->269|1208->292
                   LINES: 20->1|25->1|26->2|26->2|26->2|26->2|27->3|27->3|27->3|28->4|28->4|28->4|29->5|29->5

@@ -43,8 +43,8 @@ Seq[Any](format.raw/*1.155*/("""
 object notLogged extends notLogged_Scope0.notLogged
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/templates/notLogged.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/templates/notLogged.scala.html
                   HASH: 5856017f42a580386295d8dcea9682f292f03b44
                   MATRIX: 581->1|830->154|857->156|949->240|966->249
                   LINES: 20->1|25->1|26->2|26->2|26->2

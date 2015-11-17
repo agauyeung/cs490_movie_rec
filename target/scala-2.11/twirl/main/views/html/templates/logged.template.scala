@@ -43,8 +43,8 @@ Seq[Any](format.raw/*1.173*/("""
 object logged extends logged_Scope0.logged
               /*
                   -- GENERATED --
-                  DATE: Wed Nov 11 15:29:47 PST 2015
-                  SOURCE: /Users/alphaneo1/movie/cs490_movie_rec/app/views/templates/logged.scala.html
+                  DATE: Mon Nov 16 18:35:11 PST 2015
+                  SOURCE: /Users/alphaneo1/nmovie/cs490_movie_rec/app/views/templates/logged.scala.html
                   HASH: 0bc99804192c1fa35ea3995c3141b18dd423d9c4
                   MATRIX: 580->1|847->172|874->174|978->270|996->279
                   LINES: 20->1|25->1|26->2|26->2|26->2
